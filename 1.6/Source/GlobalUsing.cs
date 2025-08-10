@@ -1,0 +1,12 @@
+global using System;
+global using System.Collections.Generic;
+global using System.Linq;
+global using System.Reflection;
+global using System.Reflection.Emit;
+global using HarmonyLib;
+global using Rhynia.Baseline;
+global using Rhynia.Baseline.Util;
+global using Rhynia.Misc.Util;
+global using RimWorld;
+global using UnityEngine;
+global using Verse;

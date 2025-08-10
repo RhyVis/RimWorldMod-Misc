@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>Library</OutputType>
+        <TargetFramework>net480</TargetFramework>
+        <PlatformTarget>x64</PlatformTarget>
+        <AssemblyName>Rhynia.Misc</AssemblyName>
+        <OutputPath>../../Assemblies</OutputPath>
+        <VersionPrefix>1.6.0.0</VersionPrefix>
+        <DebugType>None</DebugType>
+        <DebugSymbols>False</DebugSymbols>
+        <Nullable>Enable</Nullable>
+        <AppendTargetFrameworkToOutputPath>False</AppendTargetFrameworkToOutputPath>
+        <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+        <GenerateTargetFrameworkAttribute>False</GenerateTargetFrameworkAttribute>
+        <LangVersion>latestmajor</LangVersion>
+    </PropertyGroup>
+    <ItemGroup>
+        <!-- Mod -->
+        <Compile Include="../**/*.cs" />
+        <Compile Remove="../.project/**/*.cs" />
+        <!-- Rimworld -->
+        <Reference Include="$(RimWorldPath)/*.dll">
+            <Private>False</Private>
+        </Reference>
+        <!-- Mods -->
+        <Reference Include="$(RimWorldModsPath)/[RHY] Baseline/1.6/Assemblies/Rhynia.Baseline.dll">
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="$(WorkShopPath)/2009463077/Current/Assemblies/0Harmony.dll">
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="$(WorkShopPath)/2574315206/1.6/Assemblies/XmlExtensions.dll">
+            <Private>False</Private>
+        </Reference>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="PolySharp" Version="1.15.0">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+    </ItemGroup>
+</Project>

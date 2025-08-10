@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <XmlExtensions.SettingsMenuDef>
+    <modId>Rhynia.Mod.Misc</modId>
+    <label>Rhynia Misc</label>
+    <settings>
+      <li Class="XmlExtensions.Setting.Text">
+        <text>Rhynia Misc</text>
+        <font>Medium</font>
+        <anchor>Middle</anchor>
+      </li>
+      <li Class="XmlExtensions.Setting.Gap" />
+      <li Class="XmlExtensions.Setting.Text">
+        <text>Patch (Vanilla)</text>
+      </li>
+      <li Class="XmlExtensions.Setting.Checkbox">
+        <key>Vanilla_RejectRescueJoin</key>
+        <label>Apply RejectRescueJoin Patch</label>
+        <defaultValue>True</defaultValue>
+      </li>
+      <li Class="XmlExtensions.Setting.GapLine" />
+      <li Class="XmlExtensions.Setting.Text">
+        <text>Patch (CMC)</text>
+      </li>
+      <li Class="XmlExtensions.Setting.Checkbox">
+        <key>CMC_SmallerFacility</key>
+        <label>Smaller Facility</label>
+        <defaultValue>True</defaultValue>
+      </li>
+      <li Class="XmlExtensions.Setting.ResetSettings" />
+    </settings>
+  </XmlExtensions.SettingsMenuDef>
+</Defs>

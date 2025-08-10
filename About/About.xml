@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <packageId>Rhynia.Mod.Misc</packageId>
+  <name>[RHY] Misc</name>
+  <author>Rhynia</author>
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+  <modVersion IgnoreIfNoMatchingField="True">1.0.0</modVersion>
+  <modDependencies>
+    <li>
+      <packageId>Rhynia.Mod.Baseline</packageId>
+      <displayName>[RHY] Baseline</displayName>
+      <steamWorkshopUrl />
+    </li>
+    <li>
+      <packageId>imranfish.xmlextensions</packageId>
+      <displayName>XML Extensions</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2574315206</steamWorkshopUrl>
+      <downloadUrl>https://github.com/15adhami/XmlExtensions/releases</downloadUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>brrainz.harmony</li>
+    <li>imranfish.xmlextensions</li>
+    <li>Rhynia.Mod.Baseline</li>
+    <li>tot.celetech.mkiii</li>
+  </loadAfter>
+  <description>
+    Some patches made for QOL.
+  </description>
+</ModMetaData>
