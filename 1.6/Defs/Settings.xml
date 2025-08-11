@@ -4,29 +4,225 @@
     <modId>Rhynia.Mod.Misc</modId>
     <label>Rhynia Misc</label>
     <settings>
-      <li Class="XmlExtensions.Setting.Text">
-        <text>Rhynia Misc</text>
-        <font>Medium</font>
-        <anchor>Middle</anchor>
-      </li>
-      <li Class="XmlExtensions.Setting.Gap" />
+
+      <!-- Vanilla -->
+
       <li Class="XmlExtensions.Setting.Text">
         <text>Patch (Vanilla)</text>
+        <font>Medium</font>
+        <tKey>RhyniaMisc_Settings_Vanilla</tKey>
       </li>
+
       <li Class="XmlExtensions.Setting.Checkbox">
-        <key>Vanilla_RejectRescueJoin</key>
-        <label>Apply RejectRescueJoin Patch</label>
-        <defaultValue>True</defaultValue>
+        <key>Core_RejectRescueJoin</key>
+        <label>Rescued pawns do not join</label>
+        <tooltip>You're rescued but the colony doesn't need you</tooltip>
+        <tKey>RhyniaMisc_Settings_Core_RejectRescueJoin</tKey>
+        <tKeyTip>RhyniaMisc_Settings_Core_RejectRescueJoin_Tip</tKeyTip>
+        <defaultValue>False</defaultValue>
+      </li>
+
+      <li Class="XmlExtensions.Setting.Checkbox">
+        <key>Core_ImprovePsychoidFertilitySensitivity</key>
+        <label>Improve psychoid fertility sensitivity</label>
+        <tooltip>Increases the fertility sensitivity of psychoid plants</tooltip>
+        <tKey>RhyniaMisc_Settings_Core_ImprovePsychoidFertilitySensitivity</tKey>
+        <tKeyTip>RhyniaMisc_Settings_Core_ImprovePsychoidFertilitySensitivity_Tip</tKeyTip>
+        <defaultValue>False</defaultValue>
+      </li>
+
+      <li Class="XmlExtensions.Setting.Checkbox">
+        <key>Core_NoIndoorAndOutdoorNeed</key>
+        <label>Remove indoor and outdoor need</label>
+        <tooltip>Removes the need for indoor and outdoor</tooltip>
+        <tKey>RhyniaMisc_Settings_Core_NoIndoorAndOutdoorNeed</tKey>
+        <tKeyTip>RhyniaMisc_Settings_Core_NoIndoorAndOutdoorNeed_Tip</tKeyTip>
+        <defaultValue>False</defaultValue>
+      </li>
+
+      <li Class="XmlExtensions.Setting.Checkbox">
+        <key>Core_NoSleepDisturbed</key>
+        <label>No sleep disturbed</label>
+        <tooltip>Prevents the mood of sleeping disturbed</tooltip>
+        <tKey>RhyniaMisc_Settings_Core_NoSleepDisturbed</tKey>
+        <tKeyTip>RhyniaMisc_Settings_Core_NoSleepDisturbed_Tip</tKeyTip>
+        <defaultValue>False</defaultValue>
+      </li>
+
+      <li Class="XmlExtensions.Setting.Checkbox">
+        <key>Core_NoSkillDecay</key>
+        <label>No skill decay</label>
+        <tooltip>Prevents the decay of skills over time</tooltip>
+        <tKey>RhyniaMisc_Settings_Core_NoSkillDecay</tKey>
+        <tKeyTip>RhyniaMisc_Settings_Core_NoSkillDecay_Tip</tKeyTip>
+        <defaultValue>False</defaultValue>
+      </li>
+
+      <li Class="XmlExtensions.Setting.Checkbox">
+        <key>Core_NoSurgeryFail</key>
+        <label>No surgery fail</label>
+        <tooltip>Prevents surgeries from failing</tooltip>
+        <tKey>RhyniaMisc_Settings_Core_NoSurgeryFail</tKey>
+        <tKeyTip>RhyniaMisc_Settings_Core_NoSurgeryFail_Tip</tKeyTip>
+        <defaultValue>False</defaultValue>
+      </li>
+
+      <li Class="XmlExtensions.Setting.Checkbox">
+        <key>Core_NoTurretConsume</key>
+        <label>No turret ammo consume</label>
+        <tooltip>Prevents turrets from consuming ammo</tooltip>
+        <tKey>RhyniaMisc_Settings_Core_NoTurretConsume</tKey>
+        <tKeyTip>RhyniaMisc_Settings_Core_NoTurretConsume_Tip</tKeyTip>
+        <defaultValue>False</defaultValue>
+      </li>
+
+      <li Class="XmlExtensions.Setting.Checkbox">
+        <key>Core_NoFloorWealth</key>
+        <label>No floor wealth</label>
+        <tooltip>All floors have no market value</tooltip>
+        <tKey>RhyniaMisc_Settings_Core_NoFloorWealth</tKey>
+        <tKeyTip>RhyniaMisc_Settings_Core_NoFloorWealth_Tip</tKeyTip>
+        <defaultValue>False</defaultValue>
+      </li>
+
+      <li Class="XmlExtensions.Setting.Checkbox">
+        <key>Biotech_FabricorWorkTypeArt</key>
+        <label>Fabricor do art job</label>
+        <tooltip>Allow Fabricor to perform art tasks</tooltip>
+        <tKey>RhyniaMisc_Settings_Biotech_FabricorWorkTypeArt</tKey>
+        <tKeyTip>RhyniaMisc_Settings_Biotech_FabricorWorkTypeArt_Tip</tKeyTip>
+        <defaultValue>False</defaultValue>
+      </li>
+
+      <li Class="XmlExtensions.Setting.SplitColumn">
+        <leftCol>
+          <li Class="XmlExtensions.Setting.Checkbox">
+            <key>Biotech_TweakMechWork</key>
+            <label>Mechanoid work settings</label>
+            <tooltip>These settings will be applied to all mechanoids able to do some job</tooltip>
+            <tKey>RhyniaMisc_Settings_Biotech_TweakMechWork</tKey>
+            <tKeyTip>RhyniaMisc_Settings_Biotech_TweakMechWork_Tip</tKeyTip>
+            <defaultValue>False</defaultValue>
+          </li>
+          <li Class="XmlExtensions.Setting.Gap" />
+        </leftCol>
+        <rightCol>
+          <li Class="XmlExtensions.Setting.Slider">
+            <key>Biotech_TweakMechWork_Speed</key>
+            <label>Work speed: {key}</label>
+            <tKey>RhyniaMisc_Settings_Biotech_TweakMechWork_Speed</tKey>
+            <min>1.0</min>
+            <max>20.0</max>
+            <decimals>1</decimals>
+            <defaultValue>1.0</defaultValue>
+          </li>
+          <li Class="XmlExtensions.Setting.Slider">
+            <key>Biotech_TweakMechWork_Skill</key>
+            <label>Skill level: {key}</label>
+            <tKey>RhyniaMisc_Settings_Biotech_TweakMechWork_Skill</tKey>
+            <min>1</min>
+            <max>20</max>
+            <decimals>0</decimals>
+            <defaultValue>10</defaultValue>
+          </li>
+        </rightCol>
+      </li>
+
+      <li Class="XmlExtensions.Setting.Checkbox">
+        <key>Biotech_VatLearningPowerful</key>
+        <label>Vat learning powerful</label>
+        <tooltip>Your child can become genius even spent the whole childhood in vat</tooltip>
+        <tKey>RhyniaMisc_Settings_Biotech_VatLearningPowerful</tKey>
+        <tKeyTip>RhyniaMisc_Settings_Biotech_VatLearningPowerful_Tip</tKeyTip>
+        <defaultValue>False</defaultValue>
+      </li>
+
+      <li Class="XmlExtensions.Setting.Checkbox">
+        <key>Biotech_NoSpawnCustomXenotype</key>
+        <label>No spawn custom xenotype</label>
+        <tooltip>Stop game to spawn factionless pawns using your custom xenotype, for it's too OP or something</tooltip>
+        <tKey>RhyniaMisc_Settings_Biotech_NoSpawnCustomXenotype</tKey>
+        <tKeyTip>RhyniaMisc_Settings_Biotech_NoSpawnCustomXenotype_Tip</tKeyTip>
+        <defaultValue>False</defaultValue>
       </li>
       <li Class="XmlExtensions.Setting.GapLine" />
+
+      <!-- FA -->
+
       <li Class="XmlExtensions.Setting.Text">
-        <text>Patch (CMC)</text>
+        <text>Patch (Facial Animation)</text>
+        <font>Medium</font>
+        <tKey>RhyniaMisc_Settings_FA</tKey>
       </li>
       <li Class="XmlExtensions.Setting.Checkbox">
-        <key>CMC_SmallerFacility</key>
-        <label>Smaller Facility</label>
-        <defaultValue>True</defaultValue>
+        <key>FA_PawnUpdateExtend</key>
+        <label>Extend pawn update</label>
+        <tooltip>When settings 'Enable Facial Animation for All Pawns' enable and 'Enable Facial Animation for Non-Colonists' disabled, this option makes prisoners and slaves' facial animation updated, for performance or something</tooltip>
+        <tKey>RhyniaMisc_Settings_FA_PawnUpdateExtend</tKey>
+        <tKeyTip>RhyniaMisc_Settings_FA_PawnUpdateExtend_Tip</tKeyTip>
+        <defaultValue>False</defaultValue>
       </li>
+      <li Class="XmlExtensions.Setting.GapLine" />
+
+      <!-- VE -->
+
+      <li Class="XmlExtensions.Setting.Text">
+        <text>Patch (Vanilla Expanded)</text>
+        <font>Medium</font>
+        <tKey>RhyniaMisc_Settings_VE</tKey>
+      </li>
+      <li Class="XmlExtensions.Setting.Checkbox">
+        <key>VE_VFEF_EcosystemPowerful</key>
+        <label>Powerful ecosystem</label>
+        <tooltip>Make the VFEF artificial ecosystem grow speed to 800%</tooltip>
+        <tKey>RhyniaMisc_Settings_VE_VFEF_EcosystemPowerful</tKey>
+        <tKeyTip>RhyniaMisc_Settings_VE_VFEF_EcosystemPowerful_Tip</tKeyTip>
+        <defaultValue>False</defaultValue>
+      </li>
+      <li Class="XmlExtensions.Setting.Checkbox">
+        <key>VE_VTE_SelfFunctionController</key>
+        <label>Self-function AC controller</label>
+        <tooltip>Make the VTE AC controller free from compressor</tooltip>
+        <tKey>RhyniaMisc_Settings_VE_VTE_SelfFunctionController</tKey>
+        <tKeyTip>RhyniaMisc_Settings_VE_VTE_SelfFunctionController_Tip</tKeyTip>
+        <defaultValue>False</defaultValue>
+      </li>
+      <li Class="XmlExtensions.Setting.GapLine" />
+
+      <!-- CeleTech Arsenal MKIII -->
+
+      <li Class="XmlExtensions.Setting.Text">
+        <text>Patch (CeleTech Arsenal MKIII)</text>
+        <font>Medium</font>
+        <tKey>RhyniaMisc_Settings_CTA</tKey>
+      </li>
+      <li Class="XmlExtensions.Setting.Checkbox">
+        <key>CTA_SmallerFacility</key>
+        <label>Smaller radar</label>
+        <tooltip>Reduce the size of the radar to 3x3, including the glow~</tooltip>
+        <tKey>RhyniaMisc_Settings_CTA_SmallerFacility</tKey>
+        <tKeyTip>RhyniaMisc_Settings_CTA_SmallerFacility_Tip</tKeyTip>
+        <defaultValue>False</defaultValue>
+      </li>
+      <li Class="XmlExtensions.Setting.GapLine" />
+
+      <!-- Misstall's -->
+
+      <li Class="XmlExtensions.Setting.Text">
+        <text>Patch (Misstall's)</text>
+        <font>Medium</font>
+        <tKey>RhyniaMisc_Settings_Misstall</tKey>
+      </li>
+      <li Class="XmlExtensions.Setting.Checkbox">
+        <key>Misstall_Shuttle</key>
+        <label>Shuttle powerful</label>
+        <tooltip>Make Misstall's shuttle quite OP: 0 cooldown, 160 launch distance, 6000 capacity, 1200 fuel capacity</tooltip>
+        <tKey>RhyniaMisc_Settings_Misstall_Shuttle</tKey>
+        <tKeyTip>RhyniaMisc_Settings_Misstall_Shuttle_Tip</tKeyTip>
+        <defaultValue>False</defaultValue>
+      </li>
+
+      <li Class="XmlExtensions.Setting.Gap" />
       <li Class="XmlExtensions.Setting.ResetSettings" />
     </settings>
   </XmlExtensions.SettingsMenuDef>

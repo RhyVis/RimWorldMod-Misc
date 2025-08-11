@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <RhyniaMisc_Settings_Vanilla>补丁（原版）</RhyniaMisc_Settings_Vanilla>
+
+  <RhyniaMisc_Settings_Core_RejectRescueJoin>救援小人不加入</RhyniaMisc_Settings_Core_RejectRescueJoin>
+  <RhyniaMisc_Settings_Core_RejectRescueJoin_Tip>我救你不是因为殖民地需要你</RhyniaMisc_Settings_Core_RejectRescueJoin_Tip>
+
+  <RhyniaMisc_Settings_Core_ImprovePsychoidFertilitySensitivity>提高精神叶肥沃敏感度</RhyniaMisc_Settings_Core_ImprovePsychoidFertilitySensitivity>
+  <RhyniaMisc_Settings_Core_ImprovePsychoidFertilitySensitivity_Tip>提高土地肥沃度对精神叶生长速度的影响</RhyniaMisc_Settings_Core_ImprovePsychoidFertilitySensitivity_Tip>
+
+  <RhyniaMisc_Settings_Core_NoIndoorAndOutdoorNeed>移除室内室外需求</RhyniaMisc_Settings_Core_NoIndoorAndOutdoorNeed>
+  <RhyniaMisc_Settings_Core_NoIndoorAndOutdoorNeed_Tip>移除室内和室外的需求条</RhyniaMisc_Settings_Core_NoIndoorAndOutdoorNeed_Tip>
+
+  <RhyniaMisc_Settings_Core_NoSleepDisturbed>睡眠不打扰</RhyniaMisc_Settings_Core_NoSleepDisturbed>
+  <RhyniaMisc_Settings_Core_NoSleepDisturbed_Tip>防止睡眠被打扰的心情</RhyniaMisc_Settings_Core_NoSleepDisturbed_Tip>
+
+  <RhyniaMisc_Settings_Core_NoSkillDecay>技能不衰退</RhyniaMisc_Settings_Core_NoSkillDecay>
+  <RhyniaMisc_Settings_Core_NoSkillDecay_Tip>防止技能随时间衰退</RhyniaMisc_Settings_Core_NoSkillDecay_Tip>
+
+  <RhyniaMisc_Settings_Core_NoSurgeryFail>手术不失败</RhyniaMisc_Settings_Core_NoSurgeryFail>
+  <RhyniaMisc_Settings_Core_NoSurgeryFail_Tip>手术100%成功</RhyniaMisc_Settings_Core_NoSurgeryFail_Tip>
+
+  <RhyniaMisc_Settings_Core_NoTurretConsume>炮塔不消耗弹药</RhyniaMisc_Settings_Core_NoTurretConsume>
+  <RhyniaMisc_Settings_Core_NoTurretConsume_Tip>玩家炮塔不消耗弹药</RhyniaMisc_Settings_Core_NoTurretConsume_Tip>
+
+  <RhyniaMisc_Settings_Core_NoFloorWealth>地板无财富</RhyniaMisc_Settings_Core_NoFloorWealth>
+  <RhyniaMisc_Settings_Core_NoFloorWealth_Tip>所有地板计入殖民地财富为0</RhyniaMisc_Settings_Core_NoFloorWealth_Tip>
+
+  <RhyniaMisc_Settings_Biotech_FabricorWorkTypeArt>工艺机艺术工作</RhyniaMisc_Settings_Biotech_FabricorWorkTypeArt>
+  <RhyniaMisc_Settings_Biotech_FabricorWorkTypeArt_Tip>允许工艺机执行艺术工作</RhyniaMisc_Settings_Biotech_FabricorWorkTypeArt_Tip>
+
+  <RhyniaMisc_Settings_Biotech_TweakMechWork>机械工作设置</RhyniaMisc_Settings_Biotech_TweakMechWork>
+  <RhyniaMisc_Settings_Biotech_TweakMechWork_Tip>这些设置将应用于所有能够执行某些工作的机械</RhyniaMisc_Settings_Biotech_TweakMechWork_Tip>
+  <RhyniaMisc_Settings_Biotech_TweakMechWork_Speed>工作速度: {key}</RhyniaMisc_Settings_Biotech_TweakMechWork_Speed>
+  <RhyniaMisc_Settings_Biotech_TweakMechWork_Skill>技能等级: {key}</RhyniaMisc_Settings_Biotech_TweakMechWork_Skill>
+
+  <RhyniaMisc_Settings_Biotech_VatLearningPowerful>培养仓学习增强</RhyniaMisc_Settings_Biotech_VatLearningPowerful>
+  <RhyniaMisc_Settings_Biotech_VatLearningPowerful_Tip>你的小登即使在培养仓中度过整个童年也能成为天才</RhyniaMisc_Settings_Biotech_VatLearningPowerful_Tip>
+
+  <RhyniaMisc_Settings_Biotech_NoSpawnCustomXenotype>不生成自定义异种</RhyniaMisc_Settings_Biotech_NoSpawnCustomXenotype>
+  <RhyniaMisc_Settings_Biotech_NoSpawnCustomXenotype_Tip>阻止游戏生成使用你自定义异种的无派系小人（尤其是人物编辑器整出来的），因为捏的太过逆天或是什么其他原因</RhyniaMisc_Settings_Biotech_NoSpawnCustomXenotype_Tip>
+
+  <RhyniaMisc_Settings_FA>补丁（Facial Animation）</RhyniaMisc_Settings_FA>
+
+  <RhyniaMisc_Settings_FA_PawnUpdateExtend>扩展面部表情更新</RhyniaMisc_Settings_FA_PawnUpdateExtend>
+  <RhyniaMisc_Settings_FA_PawnUpdateExtend_Tip>当打开'对所有角色启用面部动画'而关闭'对所有角色启用面部动画'时，额外允许囚犯和奴隶的表情变化，可能比全开稍微少耗费一点性能</RhyniaMisc_Settings_FA_PawnUpdateExtend_Tip>
+
+  <RhyniaMisc_Settings_VE>补丁（Vanilla Expanded）</RhyniaMisc_Settings_VE>
+
+  <RhyniaMisc_Settings_VE_VFEF_EcosystemPowerful>超级人工生态系统</RhyniaMisc_Settings_VE_VFEF_EcosystemPowerful>
+  <RhyniaMisc_Settings_VE_VFEF_EcosystemPowerful_Tip>将VFEF人工生态系统的生长速度提高到800%</RhyniaMisc_Settings_VE_VFEF_EcosystemPowerful_Tip>
+
+  <RhyniaMisc_Settings_VE_VTE_SelfFunctionController>超级空调主机</RhyniaMisc_Settings_VE_VTE_SelfFunctionController>
+  <RhyniaMisc_Settings_VE_VTE_SelfFunctionController_Tip>让VTE AC控制器不再依赖压缩机</RhyniaMisc_Settings_VE_VTE_SelfFunctionController_Tip>
+
+  <RhyniaMisc_Settings_CTA>补丁（CeleTech Arsenal MKIII）</RhyniaMisc_Settings_CTA>
+
+  <RhyniaMisc_Settings_CTA_SmallerFacility>小型设备</RhyniaMisc_Settings_CTA_SmallerFacility>
+  <RhyniaMisc_Settings_CTA_SmallerFacility_Tip>将雷达尺寸缩小到3x3</RhyniaMisc_Settings_CTA_SmallerFacility_Tip>
+
+  <RhyniaMisc_Settings_Misstall>补丁（Misstall's）</RhyniaMisc_Settings_Misstall>
+  <RhyniaMisc_Settings_Misstall_Shuttle>超级穿梭机</RhyniaMisc_Settings_Misstall_Shuttle>
+  <RhyniaMisc_Settings_Misstall_Shuttle_Tip>逆天穿梭机修改：0 cooldown, 160 launch distance, 6000 capacity, 1200 fuel capacity</RhyniaMisc_Settings_Misstall_Shuttle_Tip>
+
+</LanguageData>

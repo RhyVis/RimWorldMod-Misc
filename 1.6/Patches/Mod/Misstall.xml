@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+  <Operation Class="XmlExtensions.FindMod">
+    <mods>
+      <li>misstalls.vrshuttle</li>
+    </mods>
+    <packageId>True</packageId>
+    <caseTrue>
+      <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>Rhynia.Mod.Misc</modId>
+        <key>Misstall_Shuttle</key>
+        <defaultValue>False</defaultValue>
+        <caseTrue>
+          <Operation Class="XmlExtensions.CreateDocument">
+            <docName>VR_ShuttleA</docName>
+            <xpath>/Defs/ThingDef[defName = "VR_ShuttleA"]</xpath>
+          </Operation>
+          <Operation Class="XmlExtensions.PatchOperationReplace">
+            <xmlDoc>VR_ShuttleA</xmlDoc>
+            <xpath>/VR_ShuttleA/ThingDef[defName = "VR_ShuttleA"]/comps/li[@Class = "CompProperties_Launchable"]/cooldownTicks</xpath>
+            <value>
+              <cooldownTicks>0</cooldownTicks>
+            </value>
+          </Operation>
+          <Operation Class="XmlExtensions.PatchOperationReplace">
+            <xmlDoc>VR_ShuttleA</xmlDoc>
+            <xpath>/VR_ShuttleA/ThingDef[defName = "VR_ShuttleA"]/comps/li[@Class = "CompProperties_Launchable"]/fixedLaunchDistanceMax</xpath>
+            <value>
+              <fixedLaunchDistanceMax>160</fixedLaunchDistanceMax>
+            </value>
+          </Operation>
+          <Operation Class="XmlExtensions.PatchOperationReplace">
+            <xmlDoc>VR_ShuttleA</xmlDoc>
+            <xpath>/VR_ShuttleA/ThingDef[defName = "VR_ShuttleA"]/comps/li[@Class = "CompProperties_Launchable"]/minFuelCost</xpath>
+            <value>
+              <minFuelCost>50</minFuelCost>
+            </value>
+          </Operation>
+          <Operation Class="XmlExtensions.PatchOperationReplace">
+            <xmlDoc>VR_ShuttleA</xmlDoc>
+            <xpath>/VR_ShuttleA/ThingDef[defName = "VR_ShuttleA"]/comps/li[@Class = "CompProperties_Transporter"]/massCapacity</xpath>
+            <value>
+              <massCapacity>6000</massCapacity>
+            </value>
+          </Operation>
+          <Operation Class="XmlExtensions.PatchOperationReplace">
+            <xmlDoc>VR_ShuttleA</xmlDoc>
+            <xpath>/VR_ShuttleA/ThingDef[defName = "VR_ShuttleA"]/comps/li[@Class = "CompProperties_Refuelable"]/fuelCapacity</xpath>
+            <value>
+              <fuelCapacity>1200</fuelCapacity>
+            </value>
+          </Operation>
+          <Operation Class="XmlExtensions.PatchOperationReplace">
+            <xmlDoc>VR_ShuttleA</xmlDoc>
+            <xpath>/VR_ShuttleA/ThingDef[defName = "VR_ShuttleA"]/comps/li[@Class = "CompProperties_Refuelable"]/initialConfigurableTargetFuelLevel</xpath>
+            <value>
+              <initialConfigurableTargetFuelLevel>1200</initialConfigurableTargetFuelLevel>
+            </value>
+          </Operation>
+          <Operation Class="XmlExtensions.MergeDocument">
+            <docName>VR_ShuttleA</docName>
+          </Operation>
+        </caseTrue>
+      </Operation>
+    </caseTrue>
+  </Operation>
+</Patch>

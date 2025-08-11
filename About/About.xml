@@ -25,6 +25,7 @@
     <li>imranfish.xmlextensions</li>
     <li>Rhynia.Mod.Baseline</li>
     <li>tot.celetech.mkiii</li>
+    <li>misstalls.vrshuttle</li>
   </loadAfter>
   <description>
     Some patches made for QOL.

@@ -1,8 +1,8 @@
 namespace Rhynia.Misc.Patch;
 
-public static class Patch_CMC_SmallerFacility
+internal static class Patch_CTA_SmallerFacility
 {
-    public static void Apply(Harmony harmony)
+    internal static void Apply(Harmony harmony)
     {
         try
         {
@@ -12,32 +12,37 @@ public static class Patch_CMC_SmallerFacility
                 Out.Error("TOT_DLL_test.Building_AESARadar not found.");
                 return;
             }
+
             var method = AccessTools.Method(type, "DrawAt");
             if (method is null)
             {
                 Out.Error("TOT_DLL_test.Building_AESARadar.DrawAt not found.");
                 return;
             }
-            Out.Debug($"Render size will be replaced with {Vec}");
+
+            Out.Debug($"Render size will be replaced with {Patch_CTA_SmallerFacility_Helper.Vec}");
+
             harmony.Patch(
                 original: method,
-                transpiler: new(typeof(Patch_CMC_SmallerFacility), nameof(Transpiler))
+                transpiler: new(typeof(Patch_CTA_SmallerFacility), nameof(Transpiler))
             );
-            Out.Info("Applied Patch_CMC_SmallerRadar successfully.");
+
+            Out.Info("Applied patch CMC_SmallerFacility.");
         }
         catch (Exception ex)
         {
-            Out.Error($"Failed to apply Patch_CMC_SmallerRadar: {ex}");
+            Out.Error($"Failed to apply patch CMC_SmallerFacility: {ex}");
         }
     }
-
-    public static readonly Vector3 Vec = new(5f, 1f, 5f);
 
     static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
     {
         var type = AccessTools.TypeByName("TOT_DLL_test.Building_AESARadar");
-        var originalVecField = AccessTools.Field(type, "vec");
-        var customVecField = AccessTools.Field(typeof(Patch_CMC_SmallerFacility), nameof(Vec));
+        var fieldOriginal = AccessTools.Field(type, "vec");
+        var fieldReplace = AccessTools.Field(
+            typeof(Patch_CTA_SmallerFacility_Helper),
+            nameof(Patch_CTA_SmallerFacility_Helper.Vec)
+        );
 
         bool patched = false;
 
@@ -46,14 +51,18 @@ public static class Patch_CMC_SmallerFacility
                 !patched
                 && instruction.opcode == OpCodes.Ldsfld
                 && instruction.operand != null
-                && instruction.operand.Equals(originalVecField)
+                && instruction.operand.Equals(fieldOriginal)
             )
             {
-                yield return new CodeInstruction(OpCodes.Ldsfld, customVecField);
-                Log.Message("Patched Building_AESARadar.vec to new Vec");
+                yield return new CodeInstruction(OpCodes.Ldsfld, fieldReplace);
                 patched = true;
             }
             else
                 yield return instruction;
     }
+}
+
+public static class Patch_CTA_SmallerFacility_Helper
+{
+    public static readonly Vector3 Vec = new(5f, 1f, 5f);
 }

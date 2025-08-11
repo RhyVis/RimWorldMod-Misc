@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>Rhynia.Mod.Misc</modId>
+    <key>Core_ImprovePsychoidFertilitySensitivity</key>
+    <defaultValue>False</defaultValue>
+    <caseTrue>
+      <Operation Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName = "Plant_Psychoid"]/plant/fertilitySensitivity</xpath>
+        <value>
+          <fertilitySensitivity>0.9</fertilitySensitivity>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>Rhynia.Mod.Misc</modId>
+    <key>Core_NoIndoorAndOutdoorNeed</key>
+    <defaultValue>False</defaultValue>
+    <caseTrue>
+      <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+        <xpath>/Defs/NeedDef[defName = "Outdoors" or defName = "Indoors"]</xpath>
+        <value>
+          <neverOnSlave>True</neverOnSlave>
+          <slavesOnly>True</slavesOnly>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>Rhynia.Mod.Misc</modId>
+    <key>Core_NoSleepDisturbed</key>
+    <defaultValue>False</defaultValue>
+    <caseTrue>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>/Defs/ThoughtDef[defName = "SleepDisturbed"]</xpath>
+        <value>
+          <showBubble Operation="Replace">False</showBubble>
+          <stackLimit Operation="Replace">0</stackLimit>
+          <durationDays Operation="Replace">0.0001</durationDays>
+          <stackedEffectMultiplier Operation="Replace">0</stackedEffectMultiplier>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>Rhynia.Mod.Misc</modId>
+    <key>Core_NoFloorWealth</key>
+    <defaultValue>False</defaultValue>
+    <caseTrue>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>/Defs/TerrainDef | /Defs/TerrainTemplateDef</xpath>
+        <value>
+          <statBases Operation="Safe">
+            <MarketValue Operation="AddOrReplace">0</MarketValue>
+          </statBases>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+</Patch>

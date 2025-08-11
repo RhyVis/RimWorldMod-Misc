@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+  <Operation Class="XmlExtensions.FindMod">
+    <mods>
+      <li>tot.celetech.mkiii</li>
+    </mods>
+    <packageId>True</packageId>
+    <caseTrue>
+      <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>Rhynia.Mod.Misc</modId>
+        <key>CTA_SmallerFacility</key>
+        <defaultValue>False</defaultValue>
+        <caseTrue>
+
+          <!-- Radar -->
+
+          <Operation Class="XmlExtensions.HybridPatch">
+            <xpath>/Defs/ThingDef[defName = "CMC_CICAESA_Radar"]</xpath>
+            <value>
+              <size Operation="Replace">(3, 3)</size>
+              <graphicData Operation="Replace">
+                <graphicClass>Graphic_Single</graphicClass>
+                <texPath>Things/Buildings/CMC_CICRadar</texPath>
+                <drawSize>(5, 5)</drawSize>
+              </graphicData>
+            </value>
+          </Operation>
+
+          <!-- Cannon BF -->
+
+          <!-- <Operation Class="XmlExtensions.HybridPatch">
+            <xpath>/Defs/ThingDef[defName = "CMCcannon_BF"]</xpath>
+            <value>
+              <size Operation="Replace">(3, 3)</size>
+              <graphicData Operation="Replace">
+                <graphicClass>Graphic_Single</graphicClass>
+                <texPath>Things/Buildings/largebaseFiveXFive</texPath>
+                <drawSize>(3.8, 3.8)</drawSize>
+              </graphicData>
+            </value>
+          </Operation>
+          <Operation Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[defName = "Gun_CMCcannon_BF"]/graphicData</xpath>
+            <value>
+              <graphicData>
+                <graphicClass>Graphic_Single</graphicClass>
+                <texPath>Things/Buildings/CMC_CIWS</texPath>
+                <drawSize>(2.6, 2.6)</drawSize>
+              </graphicData>
+            </value>
+          </Operation> -->
+
+          <!-- Cannon EM -->
+
+          <!-- <Operation Class="XmlExtensions.HybridPatch">
+            <xpath>/Defs/ThingDef[defName = "CMC_EMcannon_Huge"]</xpath>
+            <value>
+              <size Operation="Replace">(5, 5)</size>
+              <graphicData Operation="Replace">
+                <texPath>Things/Buildings/CMC_HugeBase</texPath>
+                <graphicClass>Graphic_Single</graphicClass>
+                <drawSize>(9.5, 9.5)</drawSize>
+              </graphicData>
+            </value>
+          </Operation>
+          <Operation Class="PatchOperationReplace" MayRequire="tot.celetech.mkiii">
+            <xpath>/Defs/ThingDef[defName = "Gun_EMPCannon_Huge"]/graphicData</xpath>
+            <value>
+              <graphicData>
+                <texPath>Things/Buildings/CMC_LaserSTop</texPath>
+                <graphicClass>Graphic_Single</graphicClass>
+                <drawSize>(7.5, 7.5)</drawSize>
+              </graphicData>
+            </value>
+          </Operation> -->
+        </caseTrue>
+      </Operation>
+    </caseTrue>
+  </Operation>
+</Patch>
