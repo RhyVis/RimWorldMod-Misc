@@ -9,29 +9,29 @@ internal static class Patch_CTA_SmallerFacility
             var type = AccessTools.TypeByName("TOT_DLL_test.Building_AESARadar");
             if (type is null)
             {
-                Out.Error("TOT_DLL_test.Building_AESARadar not found.");
+                Error("TOT_DLL_test.Building_AESARadar not found.");
                 return;
             }
 
             var method = AccessTools.Method(type, "DrawAt");
             if (method is null)
             {
-                Out.Error("TOT_DLL_test.Building_AESARadar.DrawAt not found.");
+                Error("TOT_DLL_test.Building_AESARadar.DrawAt not found.");
                 return;
             }
 
-            Out.Debug($"Render size will be replaced with {Patch_CTA_SmallerFacility_Helper.Vec}");
+            Debug($"Render size will be replaced with {Patch_CTA_SmallerFacility_Helper.Vec}");
 
             harmony.Patch(
                 original: method,
                 transpiler: new(typeof(Patch_CTA_SmallerFacility), nameof(Transpiler))
             );
 
-            Out.Info("Applied patch CMC_SmallerFacility.");
+            Info("Applied patch CMC_SmallerFacility.");
         }
         catch (Exception ex)
         {
-            Out.Error($"Failed to apply patch CMC_SmallerFacility: {ex}");
+            Error($"Failed to apply patch CMC_SmallerFacility: {ex}");
         }
     }
 

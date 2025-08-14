@@ -1,4 +1,4 @@
-namespace Rhynia.Misc.Util;
+namespace Rhynia.Misc.Patch;
 
 internal static class Patch_Core_NoSkillDecay
 {
@@ -9,7 +9,7 @@ internal static class Patch_Core_NoSkillDecay
             var method = AccessTools.Method(typeof(SkillRecord), nameof(SkillRecord.Learn));
             if (method is null)
             {
-                Out.Error(
+                Error(
                     "Failed to apply patch Core_NoSkillDecay: Could not find method SkillRecord.Learn"
                 );
                 return;
@@ -17,11 +17,11 @@ internal static class Patch_Core_NoSkillDecay
 
             harmony.Patch(method, prefix: new(typeof(Patch_Core_NoSkillDecay), nameof(Prefix)));
 
-            Out.Info("Applied patch Core_NoSkillDecay");
+            Info("Applied patch Core_NoSkillDecay");
         }
         catch (Exception ex)
         {
-            Out.Error($"Failed to apply patch Core_NoSkillDecay: {ex}");
+            Error($"Failed to apply patch Core_NoSkillDecay: {ex}");
         }
     }
 

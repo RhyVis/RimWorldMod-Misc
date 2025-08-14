@@ -1,61 +1,212 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Patch>
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>Rhynia.Mod.Misc</modId>
-    <key>Biotech_FabricorWorkTypeArt</key>
-    <defaultValue>False</defaultValue>
+
+  <Operation Class="XmlExtensions.IfStatement">
+
+    <!-- These settings needs widely apply to all mechanoids. -->
+
+    <condition Class="XmlExtensions.Boolean.Or">
+      <conditions>
+        <li Class="XmlExtensions.Boolean.Comparison">
+          <modId>Rhynia.Mod.Misc</modId>
+          <value1>Biotech_TweakMechWork</value1>
+          <value2>True</value2>
+          <isKey1>True</isKey1>
+          <nonNumeric>True</nonNumeric>
+        </li>
+        <li Class="XmlExtensions.Boolean.Comparison">
+          <modId>Rhynia.Mod.Misc</modId>
+          <value1>Biotech_FabricorWorkTypeArt</value1>
+          <value2>True</value2>
+          <isKey1>True</isKey1>
+          <nonNumeric>True</nonNumeric>
+        </li>
+        <li Class="XmlExtensions.Boolean.Comparison">
+          <modId>Rhynia.Mod.Misc</modId>
+          <value1>Misc_MechHaulAlsoCapture</value1>
+          <value2>True</value2>
+          <isKey1>True</isKey1>
+          <nonNumeric>True</nonNumeric>
+        </li>
+      </conditions>
+    </condition>
+
     <caseTrue>
-      <Operation Class="PatchOperationAdd">
-        <xpath>/Defs/ThingDef[defName = "Mech_Fabricor"]/race/mechEnabledWorkTypes</xpath>
-        <value>
-          <li>Art</li>
-        </value>
+
+      <!-- Create all working mechanoids def document -->
+
+      <Operation Class="XmlExtensions.CreateDocument">
+        <docName>MechWorkList</docName>
+        <xpath>/Defs/ThingDef[race/mechEnabledWorkTypes]</xpath>
+      </Operation>
+
+      <!-- Apply Biotech_FabricorWorkTypeArt -->
+
+      <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>Rhynia.Mod.Misc</modId>
+        <key>Biotech_FabricorWorkTypeArt</key>
+        <defaultValue>False</defaultValue>
+        <caseTrue>
+          <Operation Class="XmlExtensions.PatchOperationSafeAdd">
+            <xmlDoc>MechWorkList</xmlDoc>
+            <xpath>/MechWorkList/ThingDef[race/mechEnabledWorkTypes[li='Smithing']]/race/mechEnabledWorkTypes</xpath>
+            <compare>InnerText</compare>
+            <value>
+              <li>Art</li>
+            </value>
+          </Operation>
+        </caseTrue>
+      </Operation>
+
+      <!-- Apply Misc_MechHaulAlsoUrgentHaul -->
+
+      <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>Rhynia.Mod.Misc</modId>
+        <key>Misc_MechHaulAlsoUrgentHaul</key>
+        <defaultValue>False</defaultValue>
+        <caseTrue>
+          <Operation Class="XmlExtensions.FindMod">
+            <mods>
+              <li>keyz182.keyzallowutilities</li>
+            </mods>
+            <packageId>True</packageId>
+            <caseTrue>
+              <!-- Keyz' Allow Utilities -->
+              <Operation Class="XmlExtensions.PatchOperationSafeAdd">
+                <xmlDoc>MechWorkList</xmlDoc>
+                <xpath>/MechWorkList/ThingDef[race/mechEnabledWorkTypes[li='Hauling']]/race/mechEnabledWorkTypes</xpath>
+                <compare>InnerText</compare>
+                <value>
+                  <li>KAU_UrgentHaul</li>
+                </value>
+              </Operation>
+            </caseTrue>
+            <caseFalse>
+              <!-- Allow Tool -->
+              <Operation Class="XmlExtensions.FindMod">
+                <mods>
+                  <li>unlimitedhugs.allowtool</li>
+                </mods>
+                <packageId>True</packageId>
+                <caseTrue>
+                  <Operation Class="XmlExtensions.PatchOperationSafeAdd">
+                    <xmlDoc>MechWorkList</xmlDoc>
+                    <xpath>/MechWorkList/ThingDef[race/mechEnabledWorkTypes/[li='Hauling']]/race/mechEnabledWorkTypes</xpath>
+                    <compare>InnerText</compare>
+                    <value>
+                      <li>HaulingUrgent</li>
+                    </value>
+                  </Operation>
+                </caseTrue>
+              </Operation>
+            </caseFalse>
+          </Operation>
+        </caseTrue>
+      </Operation>
+
+      <!-- Apply Misc_MechHaulAlsoCapture -->
+
+      <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>Rhynia.Mod.Misc</modId>
+        <key>Misc_MechHaulAlsoCapture</key>
+        <defaultValue>False</defaultValue>
+        <caseTrue>
+          <Operation Class="XmlExtensions.FindMod">
+            <mods>
+              <li>lke.smarter.CaptureThem</li>
+            </mods>
+            <packageId>True</packageId>
+            <caseTrue>
+              <!-- Smart Capture Them: Allow hauling and doctor mechanoids -->
+              <Operation Class="XmlExtensions.PatchOperationSafeAdd">
+                <xmlDoc>MechWorkList</xmlDoc>
+                <xpath>/MechWorkList/ThingDef[race/mechEnabledWorkTypes[li='Hauling' or li='Doctor']]/race/mechEnabledWorkTypes</xpath>
+                <compare>InnerText</compare>
+                <value>
+                  <li>CaptureThemCapture</li>
+                </value>
+              </Operation>
+            </caseTrue>
+            <caseFalse>
+              <!-- Fall back - Mlie's Capture Them: Allow hauling mechanoids -->
+              <Operation Class="XmlExtensions.FindMod">
+                <mods>
+                  <li>mlie.CaptureThem</li>
+                </mods>
+                <packageId>True</packageId>
+                <caseTrue>
+                  <Operation Class="XmlExtensions.PatchOperationSafeAdd">
+                    <xmlDoc>MechWorkList</xmlDoc>
+                    <xpath>/MechWorkList/ThingDef[race/mechEnabledWorkTypes/[li='Hauling']]/race/mechEnabledWorkTypes</xpath>
+                    <compare>InnerText</compare>
+                    <value>
+                      <li>CaptureThemCapture</li>
+                    </value>
+                  </Operation>
+                </caseTrue>
+              </Operation>
+            </caseFalse>
+          </Operation>
+        </caseTrue>
+      </Operation>
+
+      <!-- Apply Biotech_TweakMechWork -->
+
+      <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>Rhynia.Mod.Misc</modId>
+        <key>Biotech_TweakMechWork</key>
+        <defaultValue>False</defaultValue>
+        <caseTrue>
+          <Operation Class="XmlExtensions.UseSetting">
+            <modId>Rhynia.Mod.Misc</modId>
+            <key>Biotech_TweakMechWork_Speed</key>
+            <defaultValue>1.0</defaultValue>
+            <apply>
+              <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                <xmlDoc>MechWorkList</xmlDoc>
+                <xpath>/MechWorkList/ThingDef/statBases</xpath>
+                <value>
+                  <WorkSpeedGlobal>{Biotech_TweakMechWork_Speed}</WorkSpeedGlobal>
+                </value>
+              </Operation>
+            </apply>
+          </Operation>
+
+          <Operation Class="XmlExtensions.UseSetting">
+            <modId>Rhynia.Mod.Misc</modId>
+            <key>Biotech_TweakMechWork_Skill</key>
+            <defaultValue>10</defaultValue>
+            <apply>
+              <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                <xmlDoc>MechWorkList</xmlDoc>
+                <xpath>/MechWorkList/ThingDef/race</xpath>
+                <value>
+                  <mechFixedSkillLevel>{Biotech_TweakMechWork_Skill}</mechFixedSkillLevel>
+                </value>
+              </Operation>
+            </apply>
+          </Operation>
+        </caseTrue>
+      </Operation>
+
+      <!-- Finalize patch -->
+
+      <Operation Class="XmlExtensions.MergeDocument">
+        <docName>MechWorkList</docName>
       </Operation>
     </caseTrue>
   </Operation>
 
   <Operation Class="XmlExtensions.OptionalPatch">
     <modId>Rhynia.Mod.Misc</modId>
-    <key>Biotech_TweakMechWork</key>
+    <key>Biotech_FasterMechForming</key>
     <defaultValue>False</defaultValue>
     <caseTrue>
-      <Operation Class="XmlExtensions.CreateDocument">
-        <docName>MechWorkList</docName>
-        <xpath>Defs/ThingDef[race/mechEnabledWorkTypes]</xpath>
-      </Operation>
-
-      <Operation Class="XmlExtensions.UseSetting">
-        <modId>Rhynia.Mod.Misc</modId>
-        <key>Biotech_TweakMechWork_Speed</key>
-        <defaultValue>1.0</defaultValue>
-        <apply>
-          <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-            <xmlDoc>MechWorkList</xmlDoc>
-            <xpath>MechWorkList/ThingDef/statBases</xpath>
-            <value>
-              <WorkSpeedGlobal>{Biotech_TweakMechWork_Speed}</WorkSpeedGlobal>
-            </value>
-          </Operation>
-        </apply>
-      </Operation>
-
-      <Operation Class="XmlExtensions.UseSetting">
-        <modId>Rhynia.Mod.Misc</modId>
-        <key>Biotech_TweakMechWork_Skill</key>
-        <defaultValue>10</defaultValue>
-        <apply>
-          <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-            <xmlDoc>MechWorkList</xmlDoc>
-            <xpath>MechWorkList/ThingDef/race</xpath>
-            <value>
-              <mechFixedSkillLevel>{Biotech_TweakMechWork_Skill}</mechFixedSkillLevel>
-            </value>
-          </Operation>
-        </apply>
-      </Operation>
-
-      <Operation Class="XmlExtensions.MergeDocument">
-        <docName>MechWorkList</docName>
+      <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+        <xpath>/Defs/StatDef[defName = "MechFormingSpeed"]/defaultBaseValue</xpath>
+        <value>
+          <defaultBaseValue>20</defaultBaseValue>
+        </value>
       </Operation>
     </caseTrue>
   </Operation>

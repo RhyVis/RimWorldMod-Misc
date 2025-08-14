@@ -12,17 +12,17 @@ internal static class Patch_Core_NoTurretConsume
             );
             if (method is null)
             {
-                Out.Error("Failed to find method CompRefuelable.ConsumeFuel");
+                Error("Failed to find method CompRefuelable.ConsumeFuel");
                 return;
             }
 
             harmony.Patch(method, prefix: new(typeof(Patch_Core_NoTurretConsume), nameof(Prefix)));
 
-            Out.Info("Applied patch Core_NoTurretConsume");
+            Info("Applied patch Core_NoTurretConsume");
         }
         catch (Exception ex)
         {
-            Out.Error($"Failed to apply patch Core_NoTurretConsume: {ex}");
+            Error($"Failed to apply patch Core_NoTurretConsume: {ex}");
         }
     }
 

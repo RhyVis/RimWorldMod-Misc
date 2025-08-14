@@ -9,16 +9,14 @@ internal static class Patch_FA_PawnUpdateExtend
             var type = AccessTools.TypeByName("FacialAnimation.FacialAnimationControllerComp");
             if (type is null)
             {
-                Out.Error("Facial Animation not found.");
+                Error("Facial Animation not found.");
                 return;
             }
 
             var method = AccessTools.Method(type, "CheckUpdatable", [typeof(int)]);
             if (method is null)
             {
-                Out.Error(
-                    "FacialAnimation.FacialAnimationControllerComp.CheckUpdatable not found."
-                );
+                Error("FacialAnimation.FacialAnimationControllerComp.CheckUpdatable not found.");
                 return;
             }
 
@@ -27,11 +25,11 @@ internal static class Patch_FA_PawnUpdateExtend
                 transpiler: new(typeof(Patch_FA_PawnUpdateExtend), nameof(Transpiler))
             );
 
-            Out.Info("Applied patch FA_PawnUpdateExtend.");
+            Info("Applied patch FA_PawnUpdateExtend.");
         }
         catch (Exception ex)
         {
-            Out.Error($"Failed to apply FA_PawnUpdateExtend: {ex}");
+            Error($"Failed to apply FA_PawnUpdateExtend: {ex}");
         }
     }
 

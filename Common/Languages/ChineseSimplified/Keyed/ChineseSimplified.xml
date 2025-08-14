@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
+  <RhyniaMisc_Settings_NeedRestart>为最小化补丁，任何修改的设置都需要重启以应用</RhyniaMisc_Settings_NeedRestart>
+
   <RhyniaMisc_Settings_Vanilla>补丁（原版）</RhyniaMisc_Settings_Vanilla>
 
   <RhyniaMisc_Settings_Core_RejectRescueJoin>救援小人不加入</RhyniaMisc_Settings_Core_RejectRescueJoin>
@@ -27,8 +29,17 @@
   <RhyniaMisc_Settings_Core_NoFloorWealth>地板无财富</RhyniaMisc_Settings_Core_NoFloorWealth>
   <RhyniaMisc_Settings_Core_NoFloorWealth_Tip>所有地板计入殖民地财富为0</RhyniaMisc_Settings_Core_NoFloorWealth_Tip>
 
-  <RhyniaMisc_Settings_Biotech_FabricorWorkTypeArt>工艺机艺术工作</RhyniaMisc_Settings_Biotech_FabricorWorkTypeArt>
-  <RhyniaMisc_Settings_Biotech_FabricorWorkTypeArt_Tip>允许工艺机执行艺术工作</RhyniaMisc_Settings_Biotech_FabricorWorkTypeArt_Tip>
+  <RhyniaMisc_Settings_Core_HideCryptoSleepPawn>隐藏休眠小人</RhyniaMisc_Settings_Core_HideCryptoSleepPawn>
+  <RhyniaMisc_Settings_Core_HideCryptoSleepPawn_Tip>防止休眠小人被显示在顶部</RhyniaMisc_Settings_Core_HideCryptoSleepPawn_Tip>
+
+  <RhyniaMisc_Settings_Core_NutPasteNoDeterioration>营养膏不变质</RhyniaMisc_Settings_Core_NutPasteNoDeterioration>
+  <RhyniaMisc_Settings_Core_NutPasteNoDeterioration_Tip>防止营养膏随时间变质</RhyniaMisc_Settings_Core_NutPasteNoDeterioration_Tip>
+
+  <RhyniaMisc_Settings_Biotech_FabricorWorkTypeArt>锻造机械族艺术工作</RhyniaMisc_Settings_Biotech_FabricorWorkTypeArt>
+  <RhyniaMisc_Settings_Biotech_FabricorWorkTypeArt_Tip>允许可以从事锻造的机械族执行艺术工作</RhyniaMisc_Settings_Biotech_FabricorWorkTypeArt_Tip>
+
+  <RhyniaMisc_Settings_Biotech_FasterMechForming>快速机械体培育</RhyniaMisc_Settings_Biotech_FasterMechForming>
+  <RhyniaMisc_Settings_Biotech_FasterMechForming_Tip>机械体培育得更快</RhyniaMisc_Settings_Biotech_FasterMechForming_Tip>
 
   <RhyniaMisc_Settings_Biotech_TweakMechWork>机械工作设置</RhyniaMisc_Settings_Biotech_TweakMechWork>
   <RhyniaMisc_Settings_Biotech_TweakMechWork_Tip>这些设置将应用于所有能够执行某些工作的机械</RhyniaMisc_Settings_Biotech_TweakMechWork_Tip>
@@ -40,6 +51,9 @@
 
   <RhyniaMisc_Settings_Biotech_NoSpawnCustomXenotype>不生成自定义异种</RhyniaMisc_Settings_Biotech_NoSpawnCustomXenotype>
   <RhyniaMisc_Settings_Biotech_NoSpawnCustomXenotype_Tip>阻止游戏生成使用你自定义异种的无派系小人（尤其是人物编辑器整出来的），因为捏的太过逆天或是什么其他原因</RhyniaMisc_Settings_Biotech_NoSpawnCustomXenotype_Tip>
+
+  <RhyniaMisc_Settings_Odyssey_HeadingNorth>飞船一路向北</RhyniaMisc_Settings_Odyssey_HeadingNorth>
+  <RhyniaMisc_Settings_Odyssey_HeadingNorth_Tip>如果无法从推进器获取方向，则使重力飞船向北移动，以防对称设计+非原版控制台造成的Bug</RhyniaMisc_Settings_Odyssey_HeadingNorth_Tip>
 
   <RhyniaMisc_Settings_FA>补丁（Facial Animation）</RhyniaMisc_Settings_FA>
 
@@ -59,8 +73,26 @@
   <RhyniaMisc_Settings_CTA_SmallerFacility>小型设备</RhyniaMisc_Settings_CTA_SmallerFacility>
   <RhyniaMisc_Settings_CTA_SmallerFacility_Tip>将雷达尺寸缩小到3x3</RhyniaMisc_Settings_CTA_SmallerFacility_Tip>
 
-  <RhyniaMisc_Settings_Misstall>补丁（Misstall's）</RhyniaMisc_Settings_Misstall>
-  <RhyniaMisc_Settings_Misstall_Shuttle>超级穿梭机</RhyniaMisc_Settings_Misstall_Shuttle>
-  <RhyniaMisc_Settings_Misstall_Shuttle_Tip>逆天穿梭机修改：0 cooldown, 160 launch distance, 6000 capacity, 1200 fuel capacity</RhyniaMisc_Settings_Misstall_Shuttle_Tip>
+  <RhyniaMisc_Settings_Misc>补丁（杂项）</RhyniaMisc_Settings_Misc>
+
+  <RhyniaMisc_Settings_Misc_MechHaulAlsoCapture>搬运/医疗机械族可捕获</RhyniaMisc_Settings_Misc_MechHaulAlsoCapture>
+  <RhyniaMisc_Settings_Misc_MechHaulAlsoCapture_Tip>允许可以进行搬运/医疗工作的机械族抓捕敌人</RhyniaMisc_Settings_Misc_MechHaulAlsoCapture_Tip>
+
+  <RhyniaMisc_Settings_Misc_MechHaulAlsoUrgentHaul>搬运也可以紧急搬运</RhyniaMisc_Settings_Misc_MechHaulAlsoUrgentHaul>
+  <RhyniaMisc_Settings_Misc_MechHaulAlsoUrgentHaul_Tip>允许可以搬运的机械族执行紧急搬运任务</RhyniaMisc_Settings_Misc_MechHaulAlsoUrgentHaul_Tip>
+
+  <RhyniaMisc_Settings_Misc_BM_MechEnhance>BM机械族增强</RhyniaMisc_Settings_Misc_BM_MechEnhance>
+  <RhyniaMisc_Settings_Misc_BM_MechEnhance_Tip>为什么女仆机械不能更强大呢？</RhyniaMisc_Settings_Misc_BM_MechEnhance_Tip>
+
+  <RhyniaMisc_Settings_Misc_Misstall_Shuttle>超级穿梭机</RhyniaMisc_Settings_Misc_Misstall_Shuttle>
+  <RhyniaMisc_Settings_Misc_Misstall_Shuttle_Tip>逆天穿梭机修改：0 cooldown, 160 launch distance, 6000 capacity, 1200 fuel capacity</RhyniaMisc_Settings_Misc_Misstall_Shuttle_Tip>
+
+  <RhyniaMisc_Settings_Misc_Group_TinyWorkbench>小型工作台分组</RhyniaMisc_Settings_Misc_Group_TinyWorkbench>
+  <RhyniaMisc_Settings_Misc_Group_TinyWorkbench_Tip>将小型工作台整合到更多分组建筑下拉菜单中</RhyniaMisc_Settings_Misc_Group_TinyWorkbench_Tip>
+
+  <RhyniaMisc_Settings_Addon>附加功能</RhyniaMisc_Settings_Addon>
+
+  <RhyniaMisc_Settings_Addon_ScreamingIncident>哇袄</RhyniaMisc_Settings_Addon_ScreamingIncident>
+  <RhyniaMisc_Settings_Addon_ScreamingIncident_Tip>当事件发生时尖叫</RhyniaMisc_Settings_Addon_ScreamingIncident_Tip>
 
 </LanguageData>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <SoundDef>
+    <defName>RhyMisc_Sound_WaAo</defName>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>RhyniaMisc/Addon/Sound_WaAo</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>30</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>RhyMisc_Sound_YaHo</defName>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>RhyniaMisc/Addon/Sound_YaHo</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>50</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+</Defs>

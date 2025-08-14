@@ -11,13 +11,13 @@
         <key>VE_VFEF_EcosystemPowerful</key>
         <defaultValue>False</defaultValue>
         <caseTrue>
-          <Operation Class="PatchOperationReplace" MayRequire="vanillaexpanded.vfefarming">
+          <Operation Class="PatchOperationReplace">
             <xpath>/Defs/ThingDef[defName = "VFE_Ecosystem"]/fertility</xpath>
             <value>
               <fertility>8</fertility>
             </value>
           </Operation>
-          <Operation Class="PatchOperationReplace" MayRequire="vanillaexpanded.vfefarming">
+          <Operation Class="PatchOperationReplace">
             <xpath>/Defs/ThingDef[defName = "VFE_Ecosystem_Tilable"]/fertility</xpath>
             <value>
               <fertility>8</fertility>
@@ -39,16 +39,15 @@
         <key>VE_VTE_SelfFunctionController</key>
         <defaultValue>False</defaultValue>
         <caseTrue>
-          <Operation Class="PatchOperationReplace">
-            <xpath>/Defs/ThingDef[defName = "VTE_ACControlUnit"]/comps/li[@Class = "VanillaTemperatureExpanded.Comps.CompProperties_ResourceSingleton"]/consumptionPerTick</xpath>
+          <Operation Class="XmlExtensions.HybridPatch">
+            <xpath>/Defs/ThingDef[defName = "VTE_ACControlUnit"]</xpath>
             <value>
-              <consumptionPerTick>-120</consumptionPerTick>
-            </value>
-          </Operation>
-          <Operation Class="PatchOperationReplace">
-            <xpath>/Defs/ThingDef[defName = "VTE_ACControlUnit"]/comps/li[@Class = "VanillaTemperatureExpanded.Comps.CompProperties_ResourceSingleton"]/idleConsumptionPerTick</xpath>
-            <value>
-              <idleConsumptionPerTick>-120</idleConsumptionPerTick>
+              <comps Operation="Safe">
+                <li Class="VanillaTemperatureExpanded.Comps.CompProperties_ResourceSingleton" Operation="Safe" CheckAttributes="True">
+                  <consumptionPerTick Operation="SafeReplace">-120</consumptionPerTick>
+                  <idleConsumptionPerTick Operation="SafeReplace">-120</idleConsumptionPerTick>
+                </li>
+              </comps>
             </value>
           </Operation>
         </caseTrue>

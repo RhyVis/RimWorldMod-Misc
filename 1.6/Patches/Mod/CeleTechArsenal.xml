@@ -18,10 +18,8 @@
             <xpath>/Defs/ThingDef[defName = "CMC_CICAESA_Radar"]</xpath>
             <value>
               <size Operation="Replace">(3, 3)</size>
-              <graphicData Operation="Replace">
-                <graphicClass>Graphic_Single</graphicClass>
-                <texPath>Things/Buildings/CMC_CICRadar</texPath>
-                <drawSize>(5, 5)</drawSize>
+              <graphicData Operation="Safe">
+                <drawSize Operation="Replace">(5, 5)</drawSize>
               </graphicData>
             </value>
           </Operation>

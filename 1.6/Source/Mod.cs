@@ -12,56 +12,79 @@ public class Mod_Misc(ModContentPack mod) : Mod(mod)
 
     static Mod_Misc()
     {
-        Optional("Core_RejectRescueJoin", Patch_Core_RejectRescueJoin.Apply);
-        Optional("Core_NoSkillDecay", Patch_Core_NoSkillDecay.Apply);
-        Optional("Core_NoSurgeryFail", Patch_Core_NoSurgeryFail.Apply);
-        Optional("Core_NoTurretConsume", Patch_Core_NoTurretConsume.Apply);
-
-        Optional(
-            "Biotech_NoSpawnCustomXenotype",
-            Patch_Biotech_NoSpawnCustomXenotype.Apply,
-            "Ludeon.RimWorld.Biotech"
+        OptionalPatch(key: "Core_RejectRescueJoin", action: Patch_Core_RejectRescueJoin.Apply);
+        OptionalPatch(key: "Core_NoSkillDecay", action: Patch_Core_NoSkillDecay.Apply);
+        OptionalPatch(key: "Core_NoSurgeryFail", action: Patch_Core_NoSurgeryFail.Apply);
+        OptionalPatch(key: "Core_NoTurretConsume", action: Patch_Core_NoTurretConsume.Apply);
+        OptionalPatch(
+            key: "Core_HideCryptoSleepPawn",
+            action: Patch_Core_HideCryptoSleepPawn.Apply
         );
 
-        Optional("FA_PawnUpdateExtend", Patch_FA_PawnUpdateExtend.Apply, "Nals.FacialAnimation");
-
-        Optional(
-            "CTA_SmallerFacility",
-            Patch_CTA_SmallerFacility.Apply,
-            "tot.celetech.mkiii",
-            "Rhynia.Misc.Patch_CTA_SmallerFacility"
+        OptionalPatch(
+            key: "Biotech_NoSpawnCustomXenotype",
+            action: Patch_Biotech_NoSpawnCustomXenotype.Apply,
+            packageId: "Ludeon.RimWorld.Biotech"
         );
 
-        Out.Info("Mod Rhynia Misc initialized.");
+        OptionalPatch(key: "Odyssey_HeadingNorth", action: Patch_Odyssey_HeadingNorth.Apply);
+
+        OptionalPatch(
+            key: "FA_PawnUpdateExtend",
+            action: Patch_FA_PawnUpdateExtend.Apply,
+            packageId: "Nals.FacialAnimation"
+        );
+
+        OptionalPatch(
+            key: "CTA_SmallerFacility",
+            action: Patch_CTA_SmallerFacility.Apply,
+            packageId: "tot.celetech.mkiii",
+            queueEventId: "Rhynia.Misc.Patch_CTA_SmallerFacility"
+        );
+
+        OptionalPatch(
+            key: "Addon_ScreamingIncident",
+            action: Patch_Addon_ScreamingIncident.Apply,
+            queueEventId: "Patch_Addon_ScreamingIncident"
+        );
+
+        Info("Mod initialized.");
     }
 
-    static void Optional(
-        string key,
+    static void OptionalPatch(
         Action<Harmony> action,
-        string? modPackageId = null,
-        string? queueEvent = null,
+        string? key = null,
+        string? packageId = null,
+        string? queueEventId = null,
         bool asynchronously = false
     )
     {
-        if (modPackageId is not null && !ModsConfig.IsActive(modPackageId))
+        if (packageId is not null && !ModsConfig.IsActive(packageId))
             return;
-        if (Settings.GetBool(key))
-            if (queueEvent is not null)
+        else if (key is not null)
+            if (!SettingsProxy.GetBool(key))
+                return;
+            else if (queueEventId is not null)
                 LongEventHandler.QueueLongEvent(
                     () => action.Invoke(harmony),
-                    queueEvent,
+                    queueEventId,
                     asynchronously,
-                    (ex) => Out.Error($"Failed to queue {queueEvent} event: {ex}")
+                    (ex) => Error($"Failed to queue {queueEventId} event: {ex}")
                 );
             else
                 action.Invoke(harmony);
+        else
+            action.Invoke(harmony);
     }
 }
 
-internal static class Settings
+internal static class SettingsProxy
 {
     internal static bool GetBool(string key, bool defaultValue = false) =>
         bool.TryParse(SettingsManager.GetSetting(Mod_Misc.MOD_ID, key), out var result)
             ? result
             : defaultValue;
 }
+
+[LoggerLabel("Rhynia.Misc")]
+internal struct LogLabel;

@@ -14,17 +14,17 @@ internal static class Patch_Biotech_NoSpawnCustomXenotype
                 prefix: new(typeof(Patch_Biotech_NoSpawnCustomXenotype), nameof(Prefix))
             );
 
-            Out.Info("Applied patch Biotech_NoSpawnCustomXenotype.");
+            Info("Applied patch Biotech_NoSpawnCustomXenotype.");
         }
         catch (Exception ex)
         {
-            Out.Error($"Failed to apply patch Biotech_NoSpawnCustomXenotype: {ex}");
+            Error($"Failed to apply patch Biotech_NoSpawnCustomXenotype: {ex}");
         }
     }
 
     static bool Prefix(Pawn pawn, ref XenotypeDef xenotype)
     {
-        Out.Debug($"AdjustXenotypeForFactionlessPawn: {pawn.Name} ({pawn.GetType()})");
+        Debug($"AdjustXenotypeForFactionlessPawn: {pawn.Name} ({pawn.GetType()})");
 
         if (
             DefDatabase<XenotypeDef>.AllDefs.TryRandomElementByWeight(

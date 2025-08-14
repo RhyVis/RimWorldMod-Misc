@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
   <packageId>Rhynia.Mod.Misc</packageId>
-  <name>[RHY] Misc</name>
+  <name>[RHY] Misc Tweak</name>
   <author>Rhynia</author>
   <supportedVersions>
     <li>1.6</li>
@@ -11,7 +11,7 @@
     <li>
       <packageId>Rhynia.Mod.Baseline</packageId>
       <displayName>[RHY] Baseline</displayName>
-      <steamWorkshopUrl />
+      <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3548120229</steamWorkshopUrl>
     </li>
     <li>
       <packageId>imranfish.xmlextensions</packageId>
@@ -26,8 +26,10 @@
     <li>Rhynia.Mod.Baseline</li>
     <li>tot.celetech.mkiii</li>
     <li>misstalls.vrshuttle</li>
+    <li>vanillaexpanded.vfefarming</li>
+    <li>vanillaexpanded.temperature</li>
+    <li>xmb.breadmech</li>
+    <li>mlie.tinyworkbenchs</li>
   </loadAfter>
-  <description>
-    Some patches made for QOL.
-  </description>
+  <description>Some patches made for QOL. Everything configurable.</description>
 </ModMetaData>

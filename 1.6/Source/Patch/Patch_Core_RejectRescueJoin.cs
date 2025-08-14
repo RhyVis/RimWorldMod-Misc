@@ -16,7 +16,7 @@ internal static class Patch_Core_RejectRescueJoin
 
             if (method1 is null || method2 is null)
             {
-                Out.Error(
+                Error(
                     $"Methods for patching Core_RejectRescueJoin not found: {method1}, {method2}"
                 );
                 return;
@@ -36,11 +36,11 @@ internal static class Patch_Core_RejectRescueJoin
                     nameof(PawnGuestTracker_NotifyPawnUndowned_Transpiler)
                 )
             );
-            Out.Info("Applied patch Core_RejectRescueJoin.");
+            Info("Applied patch Core_RejectRescueJoin.");
         }
         catch (Exception ex)
         {
-            Out.Error($"Failed to apply patch Core_RejectRescueJoin: {ex}");
+            Error($"Failed to apply patch Core_RejectRescueJoin: {ex}");
         }
     }
 
@@ -54,24 +54,22 @@ internal static class Patch_Core_RejectRescueJoin
         IEnumerable<CodeInstruction> instructions
     )
     {
-        bool foundValueSeeded = false;
+        bool patched = false;
 
         foreach (var instruction in instructions)
         {
             if (
-                !foundValueSeeded
+                !patched
                 && instruction.opcode == OpCodes.Call
-                && instruction.operand?.ToString().Contains("ValueSeeded") == true
+                && instruction.operand?.ToString().Contains("ValueSeeded") is true
             )
             {
                 yield return new CodeInstruction(OpCodes.Pop);
                 yield return new CodeInstruction(OpCodes.Ldc_R4, 1.0f);
-                foundValueSeeded = true;
+                patched = true;
             }
             else
-            {
                 yield return instruction;
-            }
         }
     }
 }

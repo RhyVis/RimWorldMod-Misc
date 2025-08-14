@@ -9,7 +9,7 @@ internal static class Patch_Core_NoSurgeryFail
             var method = AccessTools.Method(typeof(Recipe_Surgery), "CheckSurgeryFail");
             if (method is null)
             {
-                Out.Error("Failed to find method Recipe_Surgery.CheckSurgeryFail");
+                Error("Failed to find method Recipe_Surgery.CheckSurgeryFail");
                 return;
             }
 
@@ -18,11 +18,11 @@ internal static class Patch_Core_NoSurgeryFail
                 prefix: new HarmonyMethod(typeof(Patch_Core_NoSurgeryFail), nameof(Prefix))
             );
 
-            Out.Info("Applied patch Core_NoSurgeryFail");
+            Info("Applied patch Core_NoSurgeryFail");
         }
         catch (Exception ex)
         {
-            Out.Error($"Failed to apply patch Core_NoSurgeryFail: {ex}");
+            Error($"Failed to apply patch Core_NoSurgeryFail: {ex}");
         }
     }
 

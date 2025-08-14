@@ -61,4 +61,15 @@
       </Operation>
     </caseTrue>
   </Operation>
+
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>Rhynia.Mod.Misc</modId>
+    <key>Core_NutPasteNoDeterioration</key>
+    <defaultValue>False</defaultValue>
+    <caseTrue>
+      <Operation Class="XmlExtensions.PatchOperationSafeRemove">
+        <xpath>Defs/ThingDef[defName = "MealNutrientPaste"]/comps/li[@Class = "CompProperties_Rottable"]</xpath>
+      </Operation>
+    </caseTrue>
+  </Operation>
 </Patch>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+  <Operation Class="XmlExtensions.FindMod">
+    <mods>
+      <li>wsp.groupedbuildings</li>
+    </mods>
+    <packageId>True</packageId>
+    <caseTrue>
+
+      <!-- Tiny Workbenches -->
+
+      <Operation Class="XmlExtensions.FindMod">
+        <mods>
+          <li>mlie.tinyworkbenchs</li>
+        </mods>
+        <packageId>True</packageId>
+        <caseTrue>
+          <Operation Class="XmlExtensions.OptionalPatch">
+            <modId>Rhynia.Mod.Misc</modId>
+            <key>Misc_Group_TinyWorkbench</key>
+            <defaultValue>False</defaultValue>
+            <caseTrue>
+
+              <Operation Class="XmlExtensions.CreateDocument">
+                <docName>MiniWorkbench</docName>
+                <xpath>/Defs/ThingDef[@ParentName = 'TWB_MiniBenchBase']</xpath>
+              </Operation>
+
+              <Operation Class="XmlExtensions.ApplyInDocument">
+                <docName>MiniWorkbench</docName>
+                <apply>
+                  <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                    <xpath>/MiniWorkbench/ThingDef[defName = 'TWB_TableSculptingMini']</xpath>
+                    <value>
+                      <designatorDropdown>Grouped_Smithy</designatorDropdown>
+                    </value>
+                  </Operation>
+
+                  <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                    <xpath>/MiniWorkbench/ThingDef[defName = 'TWB_TableMachiningMini']</xpath>
+                    <value>
+                      <designatorDropdown>Grouped_Smithy</designatorDropdown>
+                    </value>
+                  </Operation>
+
+                  <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                    <xpath>/MiniWorkbench/ThingDef[defName = 'TWB_TableButcherMini']</xpath>
+                    <value>
+                      <designatorDropdown>Grouped_Butcher</designatorDropdown>
+                    </value>
+                  </Operation>
+
+                  <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                    <xpath>/MiniWorkbench/ThingDef[defName = 'TWB_HandTailoringBenchMini']</xpath>
+                    <value>
+                      <designatorDropdown>Grouped_Tailor</designatorDropdown>
+                    </value>
+                  </Operation>
+
+                  <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                    <xpath>/MiniWorkbench/ThingDef[defName = 'TWB_ElectricTailoringBenchMini']</xpath>
+                    <value>
+                      <designatorDropdown>Grouped_Tailor</designatorDropdown>
+                    </value>
+                  </Operation>
+
+                  <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                    <xpath>/MiniWorkbench/ThingDef[defName = 'TWB_FueledSmithyMini']</xpath>
+                    <value>
+                      <designatorDropdown>Grouped_Smithy</designatorDropdown>
+                    </value>
+                  </Operation>
+
+                  <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                    <xpath>/MiniWorkbench/ThingDef[defName = 'TWB_ElectricSmithyMini']</xpath>
+                    <value>
+                      <designatorDropdown>Grouped_Smithy</designatorDropdown>
+                    </value>
+                  </Operation>
+
+                  <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                    <xpath>/MiniWorkbench/ThingDef[defName = 'TWB_ElectricStoveMini']</xpath>
+                    <value>
+                      <designatorDropdown>Grouped_Stove</designatorDropdown>
+                    </value>
+                  </Operation>
+
+                  <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                    <xpath>/MiniWorkbench/ThingDef[defName = 'TWB_BreweryMini']</xpath>
+                    <value>
+                      <designatorDropdown>Grouped_Stove</designatorDropdown>
+                    </value>
+                  </Operation>
+
+                  <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                    <xpath>/MiniWorkbench/ThingDef[defName = 'TWB_TableStonecutterMini']</xpath>
+                    <value>
+                      <designatorDropdown>Grouped_Stonecutter</designatorDropdown>
+                    </value>
+                  </Operation>
+
+                  <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                    <xpath>/MiniWorkbench/ThingDef[defName = 'TWB_DrugLabMini']</xpath>
+                    <value>
+                      <designatorDropdown>Grouped_Druglab</designatorDropdown>
+                    </value>
+                  </Operation>
+
+                  <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                    <xpath>/MiniWorkbench/ThingDef[defName = 'TWB_ElectricSmelterMini']</xpath>
+                    <value>
+                      <designatorDropdown>Grouped_Smelter</designatorDropdown>
+                    </value>
+                  </Operation>
+
+                  <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                    <xpath>/MiniWorkbench/ThingDef[defName = 'TWB_SimpleResearchBenchMini']</xpath>
+                    <value>
+                      <designatorDropdown>Grouped_Research</designatorDropdown>
+                    </value>
+                  </Operation>
+
+                  <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                    <xpath>/MiniWorkbench/ThingDef[defName = 'TWB_HiTechResearchBenchMini']</xpath>
+                    <value>
+                      <designatorDropdown>Grouped_Research</designatorDropdown>
+                    </value>
+                  </Operation>
+
+                  <Operation Class="XmlExtensions.FindMod">
+                    <mods>
+                      <li>vanillaexpanded.vfeproduction</li>
+                    </mods>
+                    <packageId>True</packageId>
+                    <caseTrue>
+
+                      <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                        <xpath>/MiniWorkbench/ThingDef[defName = 'TWB_VFE_TableButcherElectricMini']</xpath>
+                        <value>
+                          <designatorDropdown>Grouped_Butcher</designatorDropdown>
+                        </value>
+                      </Operation>
+
+                      <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                        <xpath>/MiniWorkbench/ThingDef[defName = 'TWB_VFE_TableDrugLabElectricMini']</xpath>
+                        <value>
+                          <designatorDropdown>Grouped_Druglab</designatorDropdown>
+                        </value>
+                      </Operation>
+
+                      <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                        <xpath>/MiniWorkbench/ThingDef[defName = 'TWB_VFE_FueledSmelterMini']</xpath>
+                        <value>
+                          <designatorDropdown>Grouped_Smelter</designatorDropdown>
+                        </value>
+                      </Operation>
+
+                      <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                        <xpath>/MiniWorkbench/ThingDef[defName = 'TWB_VFE_TableStonecutterElectricMini']</xpath>
+                        <value>
+                          <designatorDropdown>Grouped_Stonecutter</designatorDropdown>
+                        </value>
+                      </Operation>
+
+                    </caseTrue>
+                  </Operation>
+                </apply>
+              </Operation>
+
+              <Operation Class="XmlExtensions.MergeDocument">
+                <docName>MiniWorkbench</docName>
+              </Operation>
+
+            </caseTrue>
+          </Operation>
+        </caseTrue>
+      </Operation>
+    </caseTrue>
+  </Operation>
+</Patch>
