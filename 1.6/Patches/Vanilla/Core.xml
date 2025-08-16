@@ -68,7 +68,7 @@
     <defaultValue>False</defaultValue>
     <caseTrue>
       <Operation Class="XmlExtensions.PatchOperationSafeRemove">
-        <xpath>Defs/ThingDef[defName = "MealNutrientPaste"]/comps/li[@Class = "CompProperties_Rottable"]</xpath>
+        <xpath>/Defs/ThingDef[defName = "MealNutrientPaste"]/comps/li[@Class = "CompProperties_Rottable"]</xpath>
       </Operation>
     </caseTrue>
   </Operation>

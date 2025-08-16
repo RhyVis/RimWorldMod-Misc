@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+  <Operation Class="XmlExtensions.FindMod">
+    <mods>
+      <li>rabiosus.autoblink</li>
+    </mods>
+    <packageId>True</packageId>
+    <caseTrue>
+
+      <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>Rhynia.Mod.Misc</modId>
+        <key>Misc_MechAutoBlink</key>
+        <defaultValue>False</defaultValue>
+        <caseTrue>
+          <Operation Class="XmlExtensions.HybridPatch">
+            <xpath>/Defs/ThingDef[statBases/BandwidthCost]</xpath>
+            <value>
+              <comps Operation="Safe">
+                <li Operation="SafeAdd" CheckAttributes="True" Class="AutoBlink.CompProperties_AutoBlink">
+                  <minDistanceToBlink>10</minDistanceToBlink>
+                  <maxDistanceToBlink>120</maxDistanceToBlink>
+                  <blinkIntervalTicks>120</blinkIntervalTicks>
+                  <delayAfterEligibleTicks>30</delayAfterEligibleTicks>
+                  <cellsBeforeTarget>3</cellsBeforeTarget>
+                  <postBlinkStanceTicks>5</postBlinkStanceTicks>
+
+                  <defaultAutoBlinkDrafted>False</defaultAutoBlinkDrafted>
+                  <defaultAutoBlinkIdle>True</defaultAutoBlinkIdle>
+                  <defaultJumpAsFarAsPossible>True</defaultJumpAsFarAsPossible>
+                  <playerFactionOnly>True</playerFactionOnly>
+
+                  <excludedJobDefs>
+                    <li>GotoWander</li>
+                    <li>Carried</li>
+                  </excludedJobDefs>
+
+                  <drawGizmo>True</drawGizmo>
+
+                  <preBlinkSoundDefs>
+                    <li>AutoBlink_Skip_Small</li>
+                  </preBlinkSoundDefs>
+
+                  <preBlinkMoteDefs />
+
+                  <preBlinkEffecterDefs>
+                    <li>Skip_Entry</li>
+                  </preBlinkEffecterDefs>
+
+                  <postBlinkSoundDefs>
+                    <li>AutoBlink_Skip_Exit_Small</li>
+                  </postBlinkSoundDefs>
+
+                  <postBlinkMoteDefs />
+
+                  <postBlinkEffecterDefs>
+                    <li>Skip_ExitNoDelay</li>
+                  </postBlinkEffecterDefs>
+                </li>
+              </comps>
+            </value>
+          </Operation>
+        </caseTrue>
+      </Operation>
+
+    </caseTrue>
+  </Operation>
+</Patch>

@@ -11,7 +11,7 @@
     <li>
       <packageId>Rhynia.Mod.Baseline</packageId>
       <displayName>[RHY] Baseline</displayName>
-      <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3548120229</steamWorkshopUrl>
+      <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3549873617</steamWorkshopUrl>
     </li>
     <li>
       <packageId>imranfish.xmlextensions</packageId>
@@ -31,5 +31,5 @@
     <li>xmb.breadmech</li>
     <li>mlie.tinyworkbenchs</li>
   </loadAfter>
-  <description>Some patches made for QOL. Everything configurable.</description>
+  <description>Some patches made for QOL. Everything configurable and load as late as possible.</description>
 </ModMetaData>

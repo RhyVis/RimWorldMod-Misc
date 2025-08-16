@@ -49,7 +49,7 @@
         <caseTrue>
           <Operation Class="XmlExtensions.PatchOperationSafeAdd">
             <xmlDoc>MechWorkList</xmlDoc>
-            <xpath>/MechWorkList/ThingDef[race/mechEnabledWorkTypes[li='Smithing']]/race/mechEnabledWorkTypes</xpath>
+            <xpath>/MechWorkList/ThingDef[race/mechEnabledWorkTypes[li = 'Smithing']]/race/mechEnabledWorkTypes</xpath>
             <compare>InnerText</compare>
             <value>
               <li>Art</li>
@@ -74,7 +74,7 @@
               <!-- Keyz' Allow Utilities -->
               <Operation Class="XmlExtensions.PatchOperationSafeAdd">
                 <xmlDoc>MechWorkList</xmlDoc>
-                <xpath>/MechWorkList/ThingDef[race/mechEnabledWorkTypes[li='Hauling']]/race/mechEnabledWorkTypes</xpath>
+                <xpath>/MechWorkList/ThingDef[race/mechEnabledWorkTypes[li = 'Hauling']]/race/mechEnabledWorkTypes</xpath>
                 <compare>InnerText</compare>
                 <value>
                   <li>KAU_UrgentHaul</li>
@@ -91,7 +91,7 @@
                 <caseTrue>
                   <Operation Class="XmlExtensions.PatchOperationSafeAdd">
                     <xmlDoc>MechWorkList</xmlDoc>
-                    <xpath>/MechWorkList/ThingDef[race/mechEnabledWorkTypes/[li='Hauling']]/race/mechEnabledWorkTypes</xpath>
+                    <xpath>/MechWorkList/ThingDef[race/mechEnabledWorkTypes/[li = 'Hauling']]/race/mechEnabledWorkTypes</xpath>
                     <compare>InnerText</compare>
                     <value>
                       <li>HaulingUrgent</li>
@@ -120,7 +120,7 @@
               <!-- Smart Capture Them: Allow hauling and doctor mechanoids -->
               <Operation Class="XmlExtensions.PatchOperationSafeAdd">
                 <xmlDoc>MechWorkList</xmlDoc>
-                <xpath>/MechWorkList/ThingDef[race/mechEnabledWorkTypes[li='Hauling' or li='Doctor']]/race/mechEnabledWorkTypes</xpath>
+                <xpath>/MechWorkList/ThingDef[race/mechEnabledWorkTypes[li = 'Hauling' or li = 'Doctor']]/race/mechEnabledWorkTypes</xpath>
                 <compare>InnerText</compare>
                 <value>
                   <li>CaptureThemCapture</li>
@@ -137,7 +137,7 @@
                 <caseTrue>
                   <Operation Class="XmlExtensions.PatchOperationSafeAdd">
                     <xmlDoc>MechWorkList</xmlDoc>
-                    <xpath>/MechWorkList/ThingDef[race/mechEnabledWorkTypes/[li='Hauling']]/race/mechEnabledWorkTypes</xpath>
+                    <xpath>/MechWorkList/ThingDef[race/mechEnabledWorkTypes/[li = 'Hauling']]/race/mechEnabledWorkTypes</xpath>
                     <compare>InnerText</compare>
                     <value>
                       <li>CaptureThemCapture</li>

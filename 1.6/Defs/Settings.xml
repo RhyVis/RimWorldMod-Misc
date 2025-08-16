@@ -220,11 +220,29 @@
           </li>
 
           <li Class="XmlExtensions.Setting.Checkbox">
+            <key>Anomaly_FastCooldown</key>
+            <label>Fast cooldown anomaly</label>
+            <tooltip>Horax, aren't you tired of waiting?</tooltip>
+            <tKey>RhyniaMisc_Settings_Anomaly_FastCooldown</tKey>
+            <tKeyTip>RhyniaMisc_Settings_Anomaly_FastCooldown_Tip</tKeyTip>
+            <defaultValue>False</defaultValue>
+          </li>
+
+          <li Class="XmlExtensions.Setting.Checkbox">
             <key>Odyssey_HeadingNorth</key>
             <label>Gravship go north if not determined</label>
             <tooltip>Make the gravship head north if cannot get direction from thrusters, in case of symmetrical design with non-vanilla controls causing bugs</tooltip>
             <tKey>RhyniaMisc_Settings_Odyssey_HeadingNorth</tKey>
             <tKeyTip>RhyniaMisc_Settings_Odyssey_HeadingNorth_Tip</tKeyTip>
+            <defaultValue>False</defaultValue>
+          </li>
+
+          <li Class="XmlExtensions.Setting.Checkbox">
+            <key>Odyssey_SmallGravAnchor</key>
+            <label>Small grav anchor (3x3)</label>
+            <tooltip>Resize the grav anchor to 3x3</tooltip>
+            <tKey>RhyniaMisc_Settings_Odyssey_SmallGravAnchor</tKey>
+            <tKeyTip>RhyniaMisc_Settings_Odyssey_SmallGravAnchor_Tip</tKeyTip>
             <defaultValue>False</defaultValue>
           </li>
 
@@ -342,6 +360,15 @@
             <tooltip>Allow mechanoids that can haul to perform urgent hauling tasks</tooltip>
             <tKey>RhyniaMisc_Settings_Misc_MechHaulAlsoUrgentHaul</tKey>
             <tKeyTip>RhyniaMisc_Settings_Misc_MechHaulAlsoUrgentHaul_Tip</tKeyTip>
+            <defaultValue>False</defaultValue>
+          </li>
+
+          <li Class="XmlExtensions.Setting.Checkbox">
+            <key>Misc_MechAutoBlink</key>
+            <label>Mechanoids all use Auto Blink</label>
+            <tooltip>Allow mechanoids to automatically blink (Auto Blink), quite OOOOOOP, player faction only</tooltip>
+            <tKey>RhyniaMisc_Settings_Misc_MechAutoBlink</tKey>
+            <tKeyTip>RhyniaMisc_Settings_Misc_MechAutoBlink_Tip</tKeyTip>
             <defaultValue>False</defaultValue>
           </li>
 

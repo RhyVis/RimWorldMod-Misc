@@ -52,8 +52,14 @@
   <RhyniaMisc_Settings_Biotech_NoSpawnCustomXenotype>不生成自定义异种</RhyniaMisc_Settings_Biotech_NoSpawnCustomXenotype>
   <RhyniaMisc_Settings_Biotech_NoSpawnCustomXenotype_Tip>阻止游戏生成使用你自定义异种的无派系小人（尤其是人物编辑器整出来的），因为捏的太过逆天或是什么其他原因</RhyniaMisc_Settings_Biotech_NoSpawnCustomXenotype_Tip>
 
+  <RhyniaMisc_Settings_Anomaly_FastCooldown>快速冷却异象</RhyniaMisc_Settings_Anomaly_FastCooldown>
+  <RhyniaMisc_Settings_Anomaly_FastCooldown_Tip>牢霍，你难道不厌倦等待吗？</RhyniaMisc_Settings_Anomaly_FastCooldown_Tip>
+
   <RhyniaMisc_Settings_Odyssey_HeadingNorth>飞船一路向北</RhyniaMisc_Settings_Odyssey_HeadingNorth>
   <RhyniaMisc_Settings_Odyssey_HeadingNorth_Tip>如果无法从推进器获取方向，则使重力飞船向北移动，以防对称设计+非原版控制台造成的Bug</RhyniaMisc_Settings_Odyssey_HeadingNorth_Tip>
+
+  <RhyniaMisc_Settings_Odyssey_SmallGravAnchor>小型逆重锚(3x3)</RhyniaMisc_Settings_Odyssey_SmallGravAnchor>
+  <RhyniaMisc_Settings_Odyssey_SmallGravAnchor_Tip>缩小逆重锚占地</RhyniaMisc_Settings_Odyssey_SmallGravAnchor_Tip>
 
   <RhyniaMisc_Settings_FA>补丁（Facial Animation）</RhyniaMisc_Settings_FA>
 
@@ -80,6 +86,9 @@
 
   <RhyniaMisc_Settings_Misc_MechHaulAlsoUrgentHaul>搬运也可以紧急搬运</RhyniaMisc_Settings_Misc_MechHaulAlsoUrgentHaul>
   <RhyniaMisc_Settings_Misc_MechHaulAlsoUrgentHaul_Tip>允许可以搬运的机械族执行紧急搬运任务</RhyniaMisc_Settings_Misc_MechHaulAlsoUrgentHaul_Tip>
+
+  <RhyniaMisc_Settings_Misc_MechAutoBlink>机械体自动折跃</RhyniaMisc_Settings_Misc_MechAutoBlink>
+  <RhyniaMisc_Settings_Misc_MechAutoBlink_Tip>允许机械体通过Auto Blink折跃，仅对玩家派系生效，非常非常逆天</RhyniaMisc_Settings_Misc_MechAutoBlink_Tip>
 
   <RhyniaMisc_Settings_Misc_BM_MechEnhance>BM机械族增强</RhyniaMisc_Settings_Misc_BM_MechEnhance>
   <RhyniaMisc_Settings_Misc_BM_MechEnhance_Tip>为什么女仆机械不能更强大呢？</RhyniaMisc_Settings_Misc_BM_MechEnhance_Tip>

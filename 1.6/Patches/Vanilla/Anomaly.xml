@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>Rhynia.Mod.Misc</modId>
+    <key>Anomaly_FastCooldown</key>
+    <defaultValue>False</defaultValue>
+    <caseTrue>
+      <Operation Class="PatchOperationReplace">
+        <xpath>/Defs/PsychicRitualDef_VoidProvocation/cooldownHours</xpath>
+        <value>
+          <cooldownHours>2</cooldownHours>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+</Patch>

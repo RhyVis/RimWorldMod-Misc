@@ -11,6 +11,9 @@
         <key>Misc_BM_MechEnhance</key>
         <defaultValue>False</defaultValue>
         <caseTrue>
+
+          <!-- Croissant -->
+
           <Operation Class="XmlExtensions.HybridPatch">
             <xpath>/Defs/ThingDef[defName = "BM_Croissant"]</xpath>
             <value>
@@ -26,6 +29,7 @@
               </race>
             </value>
           </Operation>
+
         </caseTrue>
       </Operation>
     </caseTrue>

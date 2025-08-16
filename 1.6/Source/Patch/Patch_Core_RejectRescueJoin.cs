@@ -36,6 +36,7 @@ internal static class Patch_Core_RejectRescueJoin
                     nameof(PawnGuestTracker_NotifyPawnUndowned_Transpiler)
                 )
             );
+
             Info("Applied patch Core_RejectRescueJoin.");
         }
         catch (Exception ex)

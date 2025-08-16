@@ -29,7 +29,7 @@
               <Operation Class="XmlExtensions.ApplyInDocument">
                 <docName>MiniWorkbench</docName>
                 <apply>
-                  <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                  <!-- <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
                     <xpath>/MiniWorkbench/ThingDef[defName = 'TWB_TableSculptingMini']</xpath>
                     <value>
                       <designatorDropdown>Grouped_Smithy</designatorDropdown>
@@ -41,7 +41,7 @@
                     <value>
                       <designatorDropdown>Grouped_Smithy</designatorDropdown>
                     </value>
-                  </Operation>
+                  </Operation> -->
 
                   <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
                     <xpath>/MiniWorkbench/ThingDef[defName = 'TWB_TableButcherMini']</xpath>
@@ -80,6 +80,13 @@
 
                   <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
                     <xpath>/MiniWorkbench/ThingDef[defName = 'TWB_ElectricStoveMini']</xpath>
+                    <value>
+                      <designatorDropdown>Grouped_Stove</designatorDropdown>
+                    </value>
+                  </Operation>
+
+                  <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                    <xpath>/MiniWorkbench/ThingDef[defName = 'TWB_FueledStoveMini']</xpath>
                     <value>
                       <designatorDropdown>Grouped_Stove</designatorDropdown>
                     </value>
