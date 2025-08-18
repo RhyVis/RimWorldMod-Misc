@@ -63,7 +63,7 @@ internal static class Patch_Core_HideCryptoSleepPawn
                 && method == targetGetter
             )
             {
-                codes.Insert(i + 1, new CodeInstruction(OpCodes.Call, processorMethod));
+                codes.Insert(i + 1, new(OpCodes.Call, processorMethod));
                 patched = true;
                 break;
             }

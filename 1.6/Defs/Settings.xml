@@ -22,6 +22,12 @@
         </rightCol>
       </li>
 
+      <li Class="XmlExtensions.Setting.Text">
+        <text>The mod checks for mods for safe patch apply, but does not check DLC content: if you enable something related to DLC but didn't load the DLC, patches will throw errors</text>
+        <tKey>RhyniaMisc_Settings_CheckInfo</tKey>
+        <anchor>Middle</anchor>
+      </li>
+
       <li Class="XmlExtensions.Setting.GapLine" />
 
       <!-- Vanilla -->

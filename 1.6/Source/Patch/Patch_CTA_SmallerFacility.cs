@@ -50,8 +50,8 @@ internal static class Patch_CTA_SmallerFacility
             if (
                 !patched
                 && instruction.opcode == OpCodes.Ldsfld
-                && instruction.operand != null
-                && instruction.operand.Equals(fieldOriginal)
+                && instruction.operand is FieldInfo field
+                && field.Equals(fieldOriginal)
             )
             {
                 yield return new CodeInstruction(OpCodes.Ldsfld, fieldReplace);

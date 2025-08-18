@@ -13,10 +13,7 @@ internal static class Patch_Core_NoSurgeryFail
                 return;
             }
 
-            harmony.Patch(
-                method,
-                prefix: new HarmonyMethod(typeof(Patch_Core_NoSurgeryFail), nameof(Prefix))
-            );
+            harmony.Patch(method, prefix: new(typeof(Patch_Core_NoSurgeryFail), nameof(Prefix)));
 
             Info("Applied patch Core_NoSurgeryFail");
         }

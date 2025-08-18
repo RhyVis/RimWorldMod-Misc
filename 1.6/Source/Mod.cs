@@ -12,6 +12,10 @@ public class Mod_Misc(ModContentPack mod) : Mod(mod)
 
     static Mod_Misc()
     {
+        using var _ = TimingScope.Start(
+            (elapsed) => Debug($"Mod_Misc initialized in {elapsed.Milliseconds} ms")
+        );
+
         OptionalPatch(key: "Core_RejectRescueJoin", action: Patch_Core_RejectRescueJoin.Apply);
         OptionalPatch(key: "Core_NoSkillDecay", action: Patch_Core_NoSkillDecay.Apply);
         OptionalPatch(key: "Core_NoSurgeryFail", action: Patch_Core_NoSurgeryFail.Apply);
@@ -48,10 +52,10 @@ public class Mod_Misc(ModContentPack mod) : Mod(mod)
             queueEventId: "Patch_Addon_ScreamingIncident"
         );
 
-        Info("Mod initialized.");
+        DebugPatch(harmony);
     }
 
-    static void OptionalPatch(
+    private static void OptionalPatch(
         Action<Harmony> action,
         string? key = null,
         string? packageId = null,
@@ -75,6 +79,22 @@ public class Mod_Misc(ModContentPack mod) : Mod(mod)
                 action.Invoke(harmony);
         else
             action.Invoke(harmony);
+    }
+
+    private static void DebugPatch(Harmony harmony)
+    {
+        const bool DEV = false;
+
+        if (!DEV || !Prefs.DevMode)
+            return;
+        Debug("Starting applying debug patches");
+
+        LongEventHandler.QueueLongEvent(
+            () => DebugPatch_PipeSystem.Apply(harmony),
+            "Rhynia.Misc.Patch_DebugPatch_PipeSystem",
+            false,
+            (ex) => Error($"Failed to apply debug patch: {ex}")
+        );
     }
 }
 
