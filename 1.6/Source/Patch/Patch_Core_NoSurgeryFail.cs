@@ -6,16 +6,16 @@ internal static class Patch_Core_NoSurgeryFail
     {
         try
         {
-            var method = AccessTools.Method(typeof(Recipe_Surgery), "CheckSurgeryFail");
-            if (method is null)
+            if (AccessTools.Method(typeof(Recipe_Surgery), "CheckSurgeryFail") is { } method)
             {
-                Error("Failed to find method Recipe_Surgery.CheckSurgeryFail");
-                return;
+                harmony.Patch(
+                    method,
+                    prefix: new(typeof(Patch_Core_NoSurgeryFail), nameof(Prefix))
+                );
+                Info("Applied patch Core_NoSurgeryFail");
             }
-
-            harmony.Patch(method, prefix: new(typeof(Patch_Core_NoSurgeryFail), nameof(Prefix)));
-
-            Info("Applied patch Core_NoSurgeryFail");
+            else
+                Error("Failed to find method Recipe_Surgery.CheckSurgeryFail");
         }
         catch (Exception ex)
         {

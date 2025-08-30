@@ -12,8 +12,9 @@
         <key>Misc_MechAutoBlink</key>
         <defaultValue>False</defaultValue>
         <caseTrue>
+
           <Operation Class="XmlExtensions.HybridPatch">
-            <xpath>/Defs/ThingDef[statBases/BandwidthCost]</xpath>
+            <xpath>/Defs/ThingDef[(statBases/BandwidthCost or race/mechEnabledWorkTypes) and not(@Abstract)]</xpath>
             <value>
               <comps Operation="Safe">
                 <li Operation="SafeAdd" CheckAttributes="True" Class="AutoBlink.CompProperties_AutoBlink">
@@ -24,7 +25,7 @@
                   <cellsBeforeTarget>3</cellsBeforeTarget>
                   <postBlinkStanceTicks>5</postBlinkStanceTicks>
 
-                  <defaultAutoBlinkDrafted>False</defaultAutoBlinkDrafted>
+                  <defaultAutoBlinkDrafted>True</defaultAutoBlinkDrafted>
                   <defaultAutoBlinkIdle>True</defaultAutoBlinkIdle>
                   <defaultJumpAsFarAsPossible>True</defaultJumpAsFarAsPossible>
                   <playerFactionOnly>True</playerFactionOnly>
@@ -59,6 +60,7 @@
               </comps>
             </value>
           </Operation>
+
         </caseTrue>
       </Operation>
 

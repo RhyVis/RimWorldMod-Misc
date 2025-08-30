@@ -6,19 +6,19 @@ internal static class Patch_Core_NoTurretConsume
     {
         try
         {
-            var method = AccessTools.Method(
-                typeof(CompRefuelable),
-                nameof(CompRefuelable.ConsumeFuel)
-            );
-            if (method is null)
+            if (
+                AccessTools.Method(typeof(CompRefuelable), nameof(CompRefuelable.ConsumeFuel)) is
+                { } method
+            )
             {
-                Error("Failed to find method CompRefuelable.ConsumeFuel");
-                return;
+                harmony.Patch(
+                    method,
+                    prefix: new(typeof(Patch_Core_NoTurretConsume), nameof(Prefix))
+                );
+                Info("Applied patch Core_NoTurretConsume");
             }
-
-            harmony.Patch(method, prefix: new(typeof(Patch_Core_NoTurretConsume), nameof(Prefix)));
-
-            Info("Applied patch Core_NoTurretConsume");
+            else
+                Error("Failed to find method CompRefuelable.ConsumeFuel");
         }
         catch (Exception ex)
         {

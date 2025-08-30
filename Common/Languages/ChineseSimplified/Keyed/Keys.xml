@@ -35,6 +35,9 @@
   <RhyniaMisc_Settings_Core_NutPasteNoDeterioration>营养膏不变质</RhyniaMisc_Settings_Core_NutPasteNoDeterioration>
   <RhyniaMisc_Settings_Core_NutPasteNoDeterioration_Tip>防止营养膏随时间变质</RhyniaMisc_Settings_Core_NutPasteNoDeterioration_Tip>
 
+  <RhyniaMisc_Settings_Core_NoPlantRest>植物不休眠</RhyniaMisc_Settings_Core_NoPlantRest>
+  <RhyniaMisc_Settings_Core_NoPlantRest_Tip>防止植物在夜间休眠</RhyniaMisc_Settings_Core_NoPlantRest_Tip>
+
   <RhyniaMisc_Settings_Biotech_FabricorWorkTypeArt>锻造机械族艺术工作</RhyniaMisc_Settings_Biotech_FabricorWorkTypeArt>
   <RhyniaMisc_Settings_Biotech_FabricorWorkTypeArt_Tip>允许可以从事锻造的机械族执行艺术工作</RhyniaMisc_Settings_Biotech_FabricorWorkTypeArt_Tip>
 

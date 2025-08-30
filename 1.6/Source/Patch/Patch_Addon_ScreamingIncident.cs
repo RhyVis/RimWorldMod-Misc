@@ -16,25 +16,25 @@ internal static class Patch_Addon_ScreamingIncident
     {
         try
         {
-            var method = AccessTools.Method(
-                typeof(LetterStack),
-                nameof(LetterStack.ReceiveLetter),
-                [typeof(Letter), typeof(string), typeof(int), typeof(bool)]
-            );
-            if (method is null)
+            if (
+                AccessTools.Method(
+                    typeof(LetterStack),
+                    nameof(LetterStack.ReceiveLetter),
+                    [typeof(Letter), typeof(string), typeof(int), typeof(bool)]
+                ) is
+                { } method
+            )
             {
+                harmony.Patch(
+                    method,
+                    postfix: new(typeof(Patch_Addon_ScreamingIncident), nameof(Postfix))
+                );
+                Info("Applied patch Addon_ScreamingIncident");
+            }
+            else
                 Error(
                     "Failed to apply patch Addon_ScreamingIncident: Could not find method LetterStack.ReceiveLetter(Letter, string, int, bool)"
                 );
-                return;
-            }
-
-            harmony.Patch(
-                method,
-                postfix: new(typeof(Patch_Addon_ScreamingIncident), nameof(Postfix))
-            );
-
-            Info("Applied patch Addon_ScreamingIncident");
         }
         catch (Exception ex)
         {

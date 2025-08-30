@@ -132,6 +132,15 @@
             <defaultValue>False</defaultValue>
           </li>
 
+          <li Class="XmlExtensions.Setting.Checkbox">
+            <key>Core_NoPlantRest</key>
+            <label>No plant resting</label>
+            <tooltip>Prevent plants from resting at night</tooltip>
+            <tKey>RhyniaMisc_Settings_Core_NoPlantRest</tKey>
+            <tKeyTip>RhyniaMisc_Settings_Core_NoPlantRest_Tip</tKeyTip>
+            <defaultValue>False</defaultValue>
+          </li>
+
           <li Class="XmlExtensions.Setting.Gap" />
 
           <li Class="XmlExtensions.Setting.Checkbox">
@@ -384,15 +393,6 @@
             <tooltip>Why can't the maid mechanoids be more powerful?</tooltip>
             <tKey>RhyniaMisc_Settings_Misc_BM_MechEnhance</tKey>
             <tKeyTip>RhyniaMisc_Settings_Misc_BM_MechEnhance_Tip</tKeyTip>
-            <defaultValue>False</defaultValue>
-          </li>
-
-          <li Class="XmlExtensions.Setting.Checkbox">
-            <key>Misc_Misstall_Shuttle</key>
-            <label>Shuttle powerful</label>
-            <tooltip>Make Misstall's shuttle quite OP: 0 cooldown, 160 launch distance, 6000 capacity, 1200 fuel capacity</tooltip>
-            <tKey>RhyniaMisc_Settings_Misc_Misstall_Shuttle</tKey>
-            <tKeyTip>RhyniaMisc_Settings_Misc_Misstall_Shuttle_Tip</tKeyTip>
             <defaultValue>False</defaultValue>
           </li>
 

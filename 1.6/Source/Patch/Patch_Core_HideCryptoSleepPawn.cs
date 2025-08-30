@@ -6,20 +6,18 @@ internal static class Patch_Core_HideCryptoSleepPawn
     {
         try
         {
-            var method = AccessTools.Method(typeof(ColonistBar), "CheckRecacheEntries");
-            if (method is null)
+            if (AccessTools.Method(typeof(ColonistBar), "CheckRecacheEntries") is { } method)
             {
+                harmony.Patch(
+                    method,
+                    transpiler: new(typeof(Patch_Core_HideCryptoSleepPawn), nameof(Transpiler))
+                );
+                Info("Applied patch Core_HideCryptoSleepPawn");
+            }
+            else
                 Error(
                     "Failed to apply patch Core_HideCryptoSleepPawn: Could not find method ColonistBar.HideCryptoSleepPawn"
                 );
-            }
-
-            harmony.Patch(
-                method,
-                transpiler: new(typeof(Patch_Core_HideCryptoSleepPawn), nameof(Transpiler))
-            );
-
-            Info("Applied patch Core_HideCryptoSleepPawn");
         }
         catch (Exception ex)
         {

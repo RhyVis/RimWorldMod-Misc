@@ -2,3 +2,4 @@
 .vscode
 *.csproj
 *.props
+PATCHES_*

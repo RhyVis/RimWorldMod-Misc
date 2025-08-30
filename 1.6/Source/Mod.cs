@@ -24,6 +24,7 @@ public class Mod_Misc(ModContentPack mod) : Mod(mod)
             key: "Core_HideCryptoSleepPawn",
             action: Patch_Core_HideCryptoSleepPawn.Apply
         );
+        OptionalPatch(key: "Core_NoPlantRest", action: Patch_Core_NoPlantRest.Apply);
 
         OptionalPatch(
             key: "Biotech_NoSpawnCustomXenotype",
@@ -31,7 +32,11 @@ public class Mod_Misc(ModContentPack mod) : Mod(mod)
             packageId: "Ludeon.RimWorld.Biotech"
         );
 
-        OptionalPatch(key: "Odyssey_HeadingNorth", action: Patch_Odyssey_HeadingNorth.Apply);
+        OptionalPatch(
+            key: "Odyssey_HeadingNorth",
+            action: Patch_Odyssey_HeadingNorth.Apply,
+            packageId: "Ludeon.RimWorld.Odyssey"
+        );
 
         OptionalPatch(
             key: "FA_PawnUpdateExtend",

@@ -6,22 +6,23 @@ internal static class Patch_Biotech_NoSpawnCustomXenotype
     {
         try
         {
-            var method = AccessTools.Method(
-                typeof(PawnGenerator),
-                nameof(PawnGenerator.AdjustXenotypeForFactionlessPawn)
-            );
-            if (method is null)
+            if (
+                AccessTools.Method(
+                    typeof(PawnGenerator),
+                    nameof(PawnGenerator.AdjustXenotypeForFactionlessPawn)
+                ) is
+                { } method
+            )
             {
-                Error("Method PawnGenerator.AdjustXenotypeForFactionlessPawn not found.");
-                return;
+                harmony.Patch(
+                    original: method,
+                    prefix: new(typeof(Patch_Biotech_NoSpawnCustomXenotype), nameof(Prefix))
+                );
+
+                Info("Applied patch Biotech_NoSpawnCustomXenotype.");
             }
-
-            harmony.Patch(
-                original: method,
-                prefix: new(typeof(Patch_Biotech_NoSpawnCustomXenotype), nameof(Prefix))
-            );
-
-            Info("Applied patch Biotech_NoSpawnCustomXenotype.");
+            else
+                Error("Method PawnGenerator.AdjustXenotypeForFactionlessPawn not found.");
         }
         catch (Exception ex)
         {

@@ -6,18 +6,15 @@ internal static class Patch_Core_NoSkillDecay
     {
         try
         {
-            var method = AccessTools.Method(typeof(SkillRecord), nameof(SkillRecord.Learn));
-            if (method is null)
+            if (AccessTools.Method(typeof(SkillRecord), nameof(SkillRecord.Learn)) is { } method)
             {
+                harmony.Patch(method, prefix: new(typeof(Patch_Core_NoSkillDecay), nameof(Prefix)));
+                Info("Applied patch Core_NoSkillDecay");
+            }
+            else
                 Error(
                     "Failed to apply patch Core_NoSkillDecay: Could not find method SkillRecord.Learn"
                 );
-                return;
-            }
-
-            harmony.Patch(method, prefix: new(typeof(Patch_Core_NoSkillDecay), nameof(Prefix)));
-
-            Info("Applied patch Core_NoSkillDecay");
         }
         catch (Exception ex)
         {
