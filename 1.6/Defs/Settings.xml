@@ -134,10 +134,30 @@
 
           <li Class="XmlExtensions.Setting.Checkbox">
             <key>Core_NoPlantRest</key>
-            <label>No plant resting</label>
-            <tooltip>Prevent plants from resting at night</tooltip>
+            <label>No plant resting/No sun lamp resting</label>
+            <tooltip>Prevent plants from resting at night, also disables sun lamp scheduling</tooltip>
             <tKey>RhyniaMisc_Settings_Core_NoPlantRest</tKey>
             <tKeyTip>RhyniaMisc_Settings_Core_NoPlantRest_Tip</tKeyTip>
+            <defaultValue>False</defaultValue>
+          </li>
+
+          <li Class="XmlExtensions.Setting.Checkbox">
+            <key>Core_NonPlayerDoorHoldOpen</key>
+            <label>Non-player door hold open</label>
+            <tooltip>Non-player doors 'hold open' option on by default</tooltip>
+            <tKey>RhyniaMisc_Settings_Core_NonPlayerDoorHoldOpen</tKey>
+            <tKeyTip>RhyniaMisc_Settings_Core_NonPlayerDoorHoldOpen_Tip</tKeyTip>
+            <defaultValue>False</defaultValue>
+          </li>
+
+          <li Class="XmlExtensions.Setting.Gap" />
+
+          <li Class="XmlExtensions.Setting.Checkbox">
+            <key>Ideology_FastRelic</key>
+            <label>Fast ideology relic quest</label>
+            <tooltip>Speed up the ideology relic quest by 6 times</tooltip>
+            <tKey>RhyniaMisc_Settings_Ideology_FastRelic</tKey>
+            <tKeyTip>RhyniaMisc_Settings_Ideology_FastRelic_Tip</tKeyTip>
             <defaultValue>False</defaultValue>
           </li>
 

@@ -72,4 +72,15 @@
       </Operation>
     </caseTrue>
   </Operation>
+
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>Rhynia.Mod.Misc</modId>
+    <key>Core_NoPlantRest</key>
+    <defaultValue>False</defaultValue>
+    <caseTrue>
+      <Operation Class="XmlExtensions.PatchOperationSafeRemove">
+        <xpath>/Defs/ThingDef[defName = "SunLamp"]/comps/li[@Class = "CompProperties_Schedule"]</xpath>
+      </Operation>
+    </caseTrue>
+  </Operation>
 </Patch>

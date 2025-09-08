@@ -16,44 +16,68 @@ public class Mod_Misc(ModContentPack mod) : Mod(mod)
             (elapsed) => Debug($"Mod_Misc initialized in {elapsed.Milliseconds} ms")
         );
 
-        OptionalPatch(key: "Core_RejectRescueJoin", action: Patch_Core_RejectRescueJoin.Apply);
-        OptionalPatch(key: "Core_NoSkillDecay", action: Patch_Core_NoSkillDecay.Apply);
-        OptionalPatch(key: "Core_NoSurgeryFail", action: Patch_Core_NoSurgeryFail.Apply);
-        OptionalPatch(key: "Core_NoTurretConsume", action: Patch_Core_NoTurretConsume.Apply);
         OptionalPatch(
-            key: "Core_HideCryptoSleepPawn",
-            action: Patch_Core_HideCryptoSleepPawn.Apply
+            settingKey: "Core_RejectRescueJoin",
+            harmonyPatchingAction: Patch_Core_RejectRescueJoin.Apply
         );
-        OptionalPatch(key: "Core_NoPlantRest", action: Patch_Core_NoPlantRest.Apply);
+        OptionalPatch(
+            settingKey: "Core_NoSkillDecay",
+            harmonyPatchingAction: Patch_Core_NoSkillDecay.Apply
+        );
+        OptionalPatch(
+            settingKey: "Core_NoSurgeryFail",
+            harmonyPatchingAction: Patch_Core_NoSurgeryFail.Apply
+        );
+        OptionalPatch(
+            settingKey: "Core_NoTurretConsume",
+            harmonyPatchingAction: Patch_Core_NoTurretConsume.Apply
+        );
+        OptionalPatch(
+            settingKey: "Core_HideCryptoSleepPawn",
+            harmonyPatchingAction: Patch_Core_HideCryptoSleepPawn.Apply
+        );
+        OptionalPatch(
+            settingKey: "Core_NoPlantRest",
+            harmonyPatchingAction: Patch_Core_NoPlantRest.Apply
+        );
+        OptionalPatch(
+            settingKey: "Core_NonPlayerDoorHoldOpen",
+            harmonyPatchingAction: Patch_Core_NonPlayerDoorHoldOpen.Apply
+        );
 
         OptionalPatch(
-            key: "Biotech_NoSpawnCustomXenotype",
-            action: Patch_Biotech_NoSpawnCustomXenotype.Apply,
+            settingKey: "Patch_Ideology_FastRelic",
+            harmonyPatchingAction: Patch_Ideology_FastRelic.Apply
+        );
+
+        OptionalPatch(
+            settingKey: "Biotech_NoSpawnCustomXenotype",
+            harmonyPatchingAction: Patch_Biotech_NoSpawnCustomXenotype.Apply,
             packageId: "Ludeon.RimWorld.Biotech"
         );
 
         OptionalPatch(
-            key: "Odyssey_HeadingNorth",
-            action: Patch_Odyssey_HeadingNorth.Apply,
+            settingKey: "Odyssey_HeadingNorth",
+            harmonyPatchingAction: Patch_Odyssey_HeadingNorth.Apply,
             packageId: "Ludeon.RimWorld.Odyssey"
         );
 
         OptionalPatch(
-            key: "FA_PawnUpdateExtend",
-            action: Patch_FA_PawnUpdateExtend.Apply,
+            settingKey: "FA_PawnUpdateExtend",
+            harmonyPatchingAction: Patch_FA_PawnUpdateExtend.Apply,
             packageId: "Nals.FacialAnimation"
         );
 
         OptionalPatch(
-            key: "CTA_SmallerFacility",
-            action: Patch_CTA_SmallerFacility.Apply,
+            settingKey: "CTA_SmallerFacility",
+            harmonyPatchingAction: Patch_CTA_SmallerFacility.Apply,
             packageId: "tot.celetech.mkiii",
             queueEventId: "Rhynia.Misc.Patch_CTA_SmallerFacility"
         );
 
         OptionalPatch(
-            key: "Addon_ScreamingIncident",
-            action: Patch_Addon_ScreamingIncident.Apply,
+            settingKey: "Addon_ScreamingIncident",
+            harmonyPatchingAction: Patch_Addon_ScreamingIncident.Apply,
             queueEventId: "Patch_Addon_ScreamingIncident"
         );
 
@@ -61,8 +85,8 @@ public class Mod_Misc(ModContentPack mod) : Mod(mod)
     }
 
     private static void OptionalPatch(
-        Action<Harmony> action,
-        string? key = null,
+        Action<Harmony> harmonyPatchingAction,
+        string? settingKey = null,
         string? packageId = null,
         string? queueEventId = null,
         bool asynchronously = false
@@ -70,20 +94,20 @@ public class Mod_Misc(ModContentPack mod) : Mod(mod)
     {
         if (packageId is not null && !ModsConfig.IsActive(packageId))
             return;
-        else if (key is not null)
-            if (!SettingsProxy.GetBool(key))
+        else if (settingKey is not null)
+            if (!SettingsProxy.GetBool(settingKey))
                 return;
             else if (queueEventId is not null)
                 LongEventHandler.QueueLongEvent(
-                    () => action.Invoke(harmony),
+                    () => harmonyPatchingAction.Invoke(harmony),
                     queueEventId,
                     asynchronously,
                     (ex) => Error($"Failed to queue {queueEventId} event: {ex}")
                 );
             else
-                action.Invoke(harmony);
+                harmonyPatchingAction.Invoke(harmony);
         else
-            action.Invoke(harmony);
+            harmonyPatchingAction.Invoke(harmony);
     }
 
     private static void DebugPatch(Harmony harmony)
