@@ -255,6 +255,15 @@
           </li>
 
           <li Class="XmlExtensions.Setting.Checkbox">
+            <key>Biotech_WastepackFastProcess</key>
+            <label>Wastepack fast process</label>
+            <tooltip>Speed up wastepack atomizer processing by 5 times. If Vanilla Recycle Expanded installed, also speed up the facilities in that mod</tooltip>
+            <tKey>RhyniaMisc_Settings_Biotech_WastepackFastProcess</tKey>
+            <tKeyTip>RhyniaMisc_Settings_Biotech_WastepackFastProcess_Tip</tKeyTip>
+            <defaultValue>False</defaultValue>
+          </li>
+
+          <li Class="XmlExtensions.Setting.Checkbox">
             <key>Anomaly_FastCooldown</key>
             <label>Fast cooldown anomaly</label>
             <tooltip>Horax, aren't you tired of waiting?</tooltip>
@@ -417,11 +426,11 @@
           </li>
 
           <li Class="XmlExtensions.Setting.Checkbox">
-            <key>Misc_Group_TinyWorkbench</key>
-            <label>Tiny Workbench Grouping</label>
-            <tooltip>Integrate 'Tiny Workbenches' into 'More Grouped Buildings' dropdown</tooltip>
-            <tKey>RhyniaMisc_Settings_Misc_Group_TinyWorkbench</tKey>
-            <tKeyTip>RhyniaMisc_Settings_Misc_Group_TinyWorkbench_Tip</tKeyTip>
+            <key>Misc_GroupingTweak</key>
+            <label>Dropdown grouping tweaks</label>
+            <tooltip>Integrate some buildings into dropdown, requires 'Clean Categories: Dropdowns' + 'Clean Categories: Dropdowns *Extended*'</tooltip>
+            <tKey>RhyniaMisc_Settings_Misc_GroupingTweak</tKey>
+            <tKeyTip>RhyniaMisc_Settings_Misc_GroupingTweak_Tip</tKeyTip>
             <defaultValue>False</defaultValue>
           </li>
         </settings>

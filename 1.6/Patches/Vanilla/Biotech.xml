@@ -224,4 +224,73 @@
       </Operation>
     </caseTrue>
   </Operation>
+
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>Rhynia.Mod.Misc</modId>
+    <key>Biotech_WastepackFastProcess</key>
+    <defaultValue>False</defaultValue>
+    <caseTrue>
+
+      <!-- Biotech -->
+
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>/Defs/ThingDef[defName = "WastepackAtomizer"]</xpath>
+        <value>
+          <comps Operation="Safe">
+            <li Class="CompProperties_Atomizer" Operation="Safe" CheckAttributes="True">
+              <stackLimit Operation="SafeReplace">400</stackLimit>
+              <ticksPerAtomize Operation="SafeReplace">6000</ticksPerAtomize>
+            </li>
+          </comps>
+        </value>
+      </Operation>
+
+      <!-- VRE -->
+
+      <Operation Class="XmlExtensions.FindMod">
+        <mods>
+          <li>vanillaexpanded.recycling</li>
+        </mods>
+        <packageId>True</packageId>
+        <caseTrue>
+
+          <Operation Class="PatchOperationReplace">
+            <xpath>/Defs/PipeSystem.ProcessDef[defName = 'VRecyclingE_TrashToBricks']/ticks</xpath>
+            <value>
+              <ticks>6000</ticks>
+            </value>
+          </Operation>
+          <Operation Class="XmlExtensions.HybridPatch">
+            <xpath>/Defs/ThingDef[defName = "VRecyclingE_GarbageCompactor"]</xpath>
+            <value>
+              <comps Operation="Safe">
+                <li Class="VanillaRecyclingExpanded.CompProperties_SuperSimpleProcessor" Operation="Safe" CheckAttributes="True">
+                  <ticksToFinish Operation="Replace">750</ticksToFinish>
+                </li>
+              </comps>
+            </value>
+          </Operation>
+
+          <Operation Class="PatchOperationReplace">
+            <xpath>/Defs/PipeSystem.ProcessDef[defName = 'VRecyclingE_SplitStabilizedAlloypack']/ticks</xpath>
+            <value>
+              <ticks>3000</ticks>
+            </value>
+          </Operation>
+          <Operation Class="XmlExtensions.HybridPatch">
+            <xpath>/Defs/ThingDef[defName = "VRecyclingE_AlloypackSplitter"]</xpath>
+            <value>
+              <comps Operation="Safe">
+                <li Class="VanillaRecyclingExpanded.CompProperties_SuperSimpleProcessor" Operation="Safe" CheckAttributes="True">
+                  <ticksToFinish Operation="Replace">3000</ticksToFinish>
+                </li>
+              </comps>
+            </value>
+          </Operation>
+
+        </caseTrue>
+      </Operation>
+
+    </caseTrue>
+  </Operation>
 </Patch>
