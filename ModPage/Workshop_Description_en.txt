@@ -1,4 +1,4 @@
-[h1]Rhynia Misc — Patch List[/h1]
+[h1]Patch List[/h1]
 
 [i]For minimal patching, any changed settings require a game restart to take effect.[/i]
 [i]All options are disabled by default; enable what you need.[/i]
