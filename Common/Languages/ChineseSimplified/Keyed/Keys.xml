@@ -5,17 +5,17 @@
 
   <RhyniaMisc_Settings_Vanilla>补丁（原版）</RhyniaMisc_Settings_Vanilla>
 
-  <RhyniaMisc_Settings_Core_RejectRescueJoin>救援小人不加入</RhyniaMisc_Settings_Core_RejectRescueJoin>
-  <RhyniaMisc_Settings_Core_RejectRescueJoin_Tip>我救你不是因为殖民地需要你</RhyniaMisc_Settings_Core_RejectRescueJoin_Tip>
+  <RhyniaMisc_Settings_Core_RejectRescueJoin>被救援小人不加入</RhyniaMisc_Settings_Core_RejectRescueJoin>
+  <RhyniaMisc_Settings_Core_RejectRescueJoin_Tip>我救你不是因为殖民地需要你：禁止被救的小人自动加入</RhyniaMisc_Settings_Core_RejectRescueJoin_Tip>
 
   <RhyniaMisc_Settings_Core_ImprovePsychoidFertilitySensitivity>提高精神叶肥沃敏感度</RhyniaMisc_Settings_Core_ImprovePsychoidFertilitySensitivity>
-  <RhyniaMisc_Settings_Core_ImprovePsychoidFertilitySensitivity_Tip>提高土地肥沃度对精神叶生长速度的影响</RhyniaMisc_Settings_Core_ImprovePsychoidFertilitySensitivity_Tip>
+  <RhyniaMisc_Settings_Core_ImprovePsychoidFertilitySensitivity_Tip>提高精神叶的肥料敏感度到90%</RhyniaMisc_Settings_Core_ImprovePsychoidFertilitySensitivity_Tip>
 
   <RhyniaMisc_Settings_Core_NoIndoorAndOutdoorNeed>移除室内室外需求</RhyniaMisc_Settings_Core_NoIndoorAndOutdoorNeed>
-  <RhyniaMisc_Settings_Core_NoIndoorAndOutdoorNeed_Tip>移除室内和室外的需求条</RhyniaMisc_Settings_Core_NoIndoorAndOutdoorNeed_Tip>
+  <RhyniaMisc_Settings_Core_NoIndoorAndOutdoorNeed_Tip>移除室内和室外的需求</RhyniaMisc_Settings_Core_NoIndoorAndOutdoorNeed_Tip>
 
   <RhyniaMisc_Settings_Core_NoSleepDisturbed>睡眠不打扰</RhyniaMisc_Settings_Core_NoSleepDisturbed>
-  <RhyniaMisc_Settings_Core_NoSleepDisturbed_Tip>防止睡眠被打扰的心情</RhyniaMisc_Settings_Core_NoSleepDisturbed_Tip>
+  <RhyniaMisc_Settings_Core_NoSleepDisturbed_Tip>移除睡眠被打扰的心情</RhyniaMisc_Settings_Core_NoSleepDisturbed_Tip>
 
   <RhyniaMisc_Settings_Core_NoSkillDecay>技能不衰退</RhyniaMisc_Settings_Core_NoSkillDecay>
   <RhyniaMisc_Settings_Core_NoSkillDecay_Tip>防止技能随时间衰退</RhyniaMisc_Settings_Core_NoSkillDecay_Tip>
@@ -29,8 +29,8 @@
   <RhyniaMisc_Settings_Core_NoFloorWealth>地板无财富</RhyniaMisc_Settings_Core_NoFloorWealth>
   <RhyniaMisc_Settings_Core_NoFloorWealth_Tip>所有地板计入殖民地财富为0</RhyniaMisc_Settings_Core_NoFloorWealth_Tip>
 
-  <RhyniaMisc_Settings_Core_HideCryptoSleepPawn>隐藏休眠小人</RhyniaMisc_Settings_Core_HideCryptoSleepPawn>
-  <RhyniaMisc_Settings_Core_HideCryptoSleepPawn_Tip>防止休眠小人被显示在顶部</RhyniaMisc_Settings_Core_HideCryptoSleepPawn_Tip>
+  <RhyniaMisc_Settings_Core_HideCryptoSleepPawn>隐藏休眠殖民者</RhyniaMisc_Settings_Core_HideCryptoSleepPawn>
+  <RhyniaMisc_Settings_Core_HideCryptoSleepPawn_Tip>休眠仓内部的殖民者不会被显示在顶部</RhyniaMisc_Settings_Core_HideCryptoSleepPawn_Tip>
 
   <RhyniaMisc_Settings_Core_NutPasteNoDeterioration>营养膏不变质</RhyniaMisc_Settings_Core_NutPasteNoDeterioration>
   <RhyniaMisc_Settings_Core_NutPasteNoDeterioration_Tip>防止营养膏随时间变质</RhyniaMisc_Settings_Core_NutPasteNoDeterioration_Tip>
@@ -71,13 +71,16 @@
   <RhyniaMisc_Settings_Biotech_WastepackFastProcess_Tip>将垃圾分解器的速度提升5倍，如果安装了Vanilla Recycle Expanded，也加速里面垃圾处理设施的速度</RhyniaMisc_Settings_Biotech_WastepackFastProcess_Tip>
 
   <RhyniaMisc_Settings_Anomaly_FastCooldown>快速冷却异象</RhyniaMisc_Settings_Anomaly_FastCooldown>
-  <RhyniaMisc_Settings_Anomaly_FastCooldown_Tip>牢霍，你难道不厌倦等待吗？</RhyniaMisc_Settings_Anomaly_FastCooldown_Tip>
+  <RhyniaMisc_Settings_Anomaly_FastCooldown_Tip>降低虚空扰动冷却时间到2小时</RhyniaMisc_Settings_Anomaly_FastCooldown_Tip>
 
   <RhyniaMisc_Settings_Odyssey_HeadingNorth>飞船一路向北</RhyniaMisc_Settings_Odyssey_HeadingNorth>
-  <RhyniaMisc_Settings_Odyssey_HeadingNorth_Tip>如果无法从推进器获取方向，则使重力飞船向北移动，以防对称设计+非原版控制台造成的Bug</RhyniaMisc_Settings_Odyssey_HeadingNorth_Tip>
+  <RhyniaMisc_Settings_Odyssey_HeadingNorth_Tip>如果无法从推进器获取方向，则使逆重飞船向北移动，以防对称设计+非原版控制台造成的Bug</RhyniaMisc_Settings_Odyssey_HeadingNorth_Tip>
 
   <RhyniaMisc_Settings_Odyssey_SmallGravAnchor>小型逆重锚(3x3)</RhyniaMisc_Settings_Odyssey_SmallGravAnchor>
   <RhyniaMisc_Settings_Odyssey_SmallGravAnchor_Tip>缩小逆重锚占地</RhyniaMisc_Settings_Odyssey_SmallGravAnchor_Tip>
+
+  <RhyniaMisc_Settings_Odyssey_GravEngineNoPathCost>逆重引擎不减速</RhyniaMisc_Settings_Odyssey_GravEngineNoPathCost>
+  <RhyniaMisc_Settings_Odyssey_GravEngineNoPathCost_Tip>移除小人通过逆重引擎上方的减速</RhyniaMisc_Settings_Odyssey_GravEngineNoPathCost_Tip>
 
   <RhyniaMisc_Settings_FA>补丁（Facial Animation）</RhyniaMisc_Settings_FA>
 
@@ -108,8 +111,8 @@
   <RhyniaMisc_Settings_Misc_MechAutoBlink>机械体自动折跃</RhyniaMisc_Settings_Misc_MechAutoBlink>
   <RhyniaMisc_Settings_Misc_MechAutoBlink_Tip>允许机械体通过Auto Blink折跃，仅对玩家派系生效，非常非常逆天</RhyniaMisc_Settings_Misc_MechAutoBlink_Tip>
 
-  <RhyniaMisc_Settings_Misc_BM_MechEnhance>BM机械族增强</RhyniaMisc_Settings_Misc_BM_MechEnhance>
-  <RhyniaMisc_Settings_Misc_BM_MechEnhance_Tip>为什么女仆机械不能更强大呢？</RhyniaMisc_Settings_Misc_BM_MechEnhance_Tip>
+  <RhyniaMisc_Settings_Misc_BM_MechEnhance>ExGT Bio Mechanoid 机械族增强</RhyniaMisc_Settings_Misc_BM_MechEnhance>
+  <RhyniaMisc_Settings_Misc_BM_MechEnhance_Tip>为ExGT Bio Mechanoids的机械族添加了一些工作类型, 和More Mechanitor Mechs 2.0一起使用时，更多工作类型也可用</RhyniaMisc_Settings_Misc_BM_MechEnhance_Tip>
 
   <RhyniaMisc_Settings_Misc_Misstall_Shuttle>超级穿梭机</RhyniaMisc_Settings_Misc_Misstall_Shuttle>
   <RhyniaMisc_Settings_Misc_Misstall_Shuttle_Tip>逆天穿梭机修改：0 cooldown, 160 launch distance, 6000 capacity, 1200 fuel capacity</RhyniaMisc_Settings_Misc_Misstall_Shuttle_Tip>

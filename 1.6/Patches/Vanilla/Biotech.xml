@@ -1,6 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Patch>
 
+  <!-- Pre Patches - that adds work types to mechanoids -->
+
+  <!-- ExGT Bio Mechanoid work types addon -->
+  <Operation Class="XmlExtensions.FindMod">
+    <mods>
+      <li>xmb.breadmech</li>
+    </mods>
+    <packageId>True</packageId>
+    <caseTrue>
+      <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>Rhynia.Mod.Misc</modId>
+        <key>Misc_BM_MechEnhance</key>
+        <defaultValue>False</defaultValue>
+        <caseTrue>
+
+          <!-- Croissant -->
+
+          <Operation Class="XmlExtensions.HybridPatch">
+            <xpath>/Defs/ThingDef[defName = "BM_Croissant"]</xpath>
+            <value>
+              <statBases Operation="Safe">
+                <MoveSpeed Operation="AddOrReplace">5.5</MoveSpeed>
+              </statBases>
+              <race Operation="Safe">
+                <mechEnabledWorkTypes Operation="Safe">
+                  <li Operation="SafeAdd" Compare="InnerText">BasicWorker</li>
+                  <li Operation="SafeAdd" Compare="InnerText">Doctor</li>
+                </mechEnabledWorkTypes>
+              </race>
+            </value>
+          </Operation>
+
+          <!-- BakedBun -->
+
+          <Operation Class="XmlExtensions.HybridPatch">
+            <xpath>/Defs/ThingDef[defName = "BM_BakedBun"]</xpath>
+            <value>
+              <statBases Operation="Safe">
+                <WorkSpeedGlobal Operation="SafeAdd">1.1</WorkSpeedGlobal>
+              </statBases>
+              <race Operation="Safe">
+                <mechEnabledWorkTypes Operation="Safe">
+                  <li Operation="SafeAdd" Compare="InnerText">Hauling</li>
+                  <li Operation="SafeAdd" Compare="InnerText" MayRequire="nalzurin.moremechanitormechs20">Warden</li>
+                </mechEnabledWorkTypes>
+              </race>
+            </value>
+          </Operation>
+
+          <!-- SoftRoll -->
+
+          <Operation Class="XmlExtensions.HybridPatch">
+            <xpath>/Defs/ThingDef[defName = "BM_SoftRoll"]</xpath>
+            <value>
+              <statBases Operation="Safe">
+                <MoveSpeed Operation="AddOrReplace">4.8</MoveSpeed>
+                <WorkSpeedGlobal Operation="SafeAdd">1.2</WorkSpeedGlobal>
+              </statBases>
+              <race Operation="Safe">
+                <mechEnabledWorkTypes Operation="Safe">
+                  <li Operation="SafeAdd" Compare="InnerText" MayRequire="nalzurin.moremechanitormechs20">Hunting</li>
+                </mechEnabledWorkTypes>
+              </race>
+            </value>
+          </Operation>
+
+          <!-- Puff -->
+
+          <Operation Class="XmlExtensions.HybridPatch">
+            <xpath>/Defs/ThingDef[defName = "BM_Puff"]</xpath>
+            <value>
+              <statBases Operation="Safe">
+                <MoveSpeed Operation="AddOrReplace">4.8</MoveSpeed>
+                <WorkSpeedGlobal Operation="SafeAdd">1.15</WorkSpeedGlobal>
+              </statBases>
+              <race Operation="Safe">
+                <mechEnabledWorkTypes Operation="Safe">
+                  <li Operation="SafeAdd" Compare="InnerText" MayRequire="nalzurin.moremechanitormechs20">Handling</li>
+                  <li Operation="SafeAdd" Compare="InnerText" MayRequire="nalzurin.moremechanitormechs20">Research</li>
+                </mechEnabledWorkTypes>
+              </race>
+            </value>
+          </Operation>
+
+          <!-- WitchBread -->
+
+          <Operation Class="XmlExtensions.HybridPatch">
+            <xpath>/Defs/ThingDef[defName = "BM_WitchBread"]</xpath>
+            <value>
+              <statBases Operation="Safe">
+                <MoveSpeed Operation="AddOrReplace">4.6</MoveSpeed>
+                <WorkSpeedGlobal Operation="SafeAdd">1.2</WorkSpeedGlobal>
+              </statBases>
+              <race Operation="Safe">
+                <mechEnabledWorkTypes Operation="Safe">
+                  <li Operation="SafeAdd" Compare="InnerText">Smithing</li>
+                  <li Operation="SafeAdd" Compare="InnerText">Tailoring</li>
+                  <li Operation="SafeAdd" Compare="InnerText">Crafting</li>
+                  <li Operation="SafeAdd" Compare="InnerText">Art</li>
+                </mechEnabledWorkTypes>
+              </race>
+            </value>
+          </Operation>
+
+        </caseTrue>
+      </Operation>
+    </caseTrue>
+  </Operation>
+
+  <!-- Post Patches - that modifies work types to mechanoids -->
+
   <Operation Class="XmlExtensions.IfStatement">
 
     <!-- These settings needs widely apply to all mechanoids. -->
@@ -219,6 +330,8 @@
       </Operation>
     </caseTrue>
   </Operation>
+
+  <!-- Other patches - that does not directly relate to mechanoids -->
 
   <Operation Class="XmlExtensions.OptionalPatch">
     <modId>Rhynia.Mod.Misc</modId>

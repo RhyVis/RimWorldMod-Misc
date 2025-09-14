@@ -45,7 +45,7 @@
           <li Class="XmlExtensions.Setting.Checkbox">
             <key>Core_RejectRescueJoin</key>
             <label>Rescued pawns do not join</label>
-            <tooltip>You're rescued but the colony doesn't need you</tooltip>
+            <tooltip>You're rescued but the colony doesn't need you: stops pawns you saved auto-joining</tooltip>
             <tKey>RhyniaMisc_Settings_Core_RejectRescueJoin</tKey>
             <tKeyTip>RhyniaMisc_Settings_Core_RejectRescueJoin_Tip</tKeyTip>
             <defaultValue>False</defaultValue>
@@ -54,7 +54,7 @@
           <li Class="XmlExtensions.Setting.Checkbox">
             <key>Core_ImprovePsychoidFertilitySensitivity</key>
             <label>Improve psychoid fertility sensitivity</label>
-            <tooltip>Increases the fertility sensitivity of psychoid plants</tooltip>
+            <tooltip>Increases the fertility sensitivity of psychoid plants to 90%</tooltip>
             <tKey>RhyniaMisc_Settings_Core_ImprovePsychoidFertilitySensitivity</tKey>
             <tKeyTip>RhyniaMisc_Settings_Core_ImprovePsychoidFertilitySensitivity_Tip</tKeyTip>
             <defaultValue>False</defaultValue>
@@ -117,7 +117,7 @@
           <li Class="XmlExtensions.Setting.Checkbox">
             <key>Core_HideCryptoSleepPawn</key>
             <label>Hide crypto sleep pawn</label>
-            <tooltip>Prevent crypto sleep pawns from being visible</tooltip>
+            <tooltip>Prevent crypto sleep pawns from being visible in bar</tooltip>
             <tKey>RhyniaMisc_Settings_Core_HideCryptoSleepPawn</tKey>
             <tKeyTip>RhyniaMisc_Settings_Core_HideCryptoSleepPawn_Tip</tKeyTip>
             <defaultValue>False</defaultValue>
@@ -281,14 +281,18 @@
             <defaultValue>False</defaultValue>
           </li>
 
+          <li Class="XmlExtensions.Setting.Gap" />
+
           <li Class="XmlExtensions.Setting.Checkbox">
             <key>Anomaly_FastCooldown</key>
             <label>Fast cooldown anomaly</label>
-            <tooltip>Horax, aren't you tired of waiting?</tooltip>
+            <tooltip>Reduce void provocation cooldown time to 2 hour</tooltip>
             <tKey>RhyniaMisc_Settings_Anomaly_FastCooldown</tKey>
             <tKeyTip>RhyniaMisc_Settings_Anomaly_FastCooldown_Tip</tKeyTip>
             <defaultValue>False</defaultValue>
           </li>
+
+          <li Class="XmlExtensions.Setting.Gap" />
 
           <li Class="XmlExtensions.Setting.Checkbox">
             <key>Odyssey_HeadingNorth</key>
@@ -305,6 +309,15 @@
             <tooltip>Resize the grav anchor to 3x3</tooltip>
             <tKey>RhyniaMisc_Settings_Odyssey_SmallGravAnchor</tKey>
             <tKeyTip>RhyniaMisc_Settings_Odyssey_SmallGravAnchor_Tip</tKeyTip>
+            <defaultValue>False</defaultValue>
+          </li>
+
+          <li Class="XmlExtensions.Setting.Checkbox">
+            <key>Odyssey_GravEngineNoPathCost</key>
+            <label>Grav engine no path cost</label>
+            <tooltip>Remove path cost for grav engine</tooltip>
+            <tKey>RhyniaMisc_Settings_Odyssey_GravEngineNoPathCost</tKey>
+            <tKeyTip>RhyniaMisc_Settings_Odyssey_GravEngineNoPathCost_Tip</tKeyTip>
             <defaultValue>False</defaultValue>
           </li>
 
@@ -436,8 +449,8 @@
 
           <li Class="XmlExtensions.Setting.Checkbox">
             <key>Misc_BM_MechEnhance</key>
-            <label>BM mechanoids enhancement</label>
-            <tooltip>Why can't the maid mechanoids be more powerful?</tooltip>
+            <label>ExGT Bio Mechanoid enhancement</label>
+            <tooltip>Add work types for ExGT Bio Mechanoids, with More Mechanitor Mechs 2.0, more work types also available</tooltip>
             <tKey>RhyniaMisc_Settings_Misc_BM_MechEnhance</tKey>
             <tKeyTip>RhyniaMisc_Settings_Misc_BM_MechEnhance_Tip</tKeyTip>
             <defaultValue>False</defaultValue>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Patch>
+
   <Operation Class="XmlExtensions.OptionalPatch">
     <modId>Rhynia.Mod.Misc</modId>
     <key>Odyssey_SmallGravAnchor</key>
@@ -16,4 +17,19 @@
       </Operation>
     </caseTrue>
   </Operation>
+
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>Rhynia.Mod.Misc</modId>
+    <key>Odyssey_GravEngineNoPathCost</key>
+    <defaultValue>False</defaultValue>
+    <caseTrue>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>/Defs/ThingDef[defName = "GravEngine"]</xpath>
+        <value>
+          <pathCost Operation="Replace">0</pathCost>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+
 </Patch>

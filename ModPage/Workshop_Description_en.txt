@@ -1,39 +1,42 @@
+Self-use patches made during my run. Everything configurable and load as late as possible.
+
 [h1]Patch List[/h1]
 
 [i]For minimal patching, any changed settings require a game restart to take effect.[/i]
 [i]All options are disabled by default; enable what you need.[/i]
+[i]This mod checks loaded mods before applying patches, but does not check DLC content. If you enable a DLC-related option without the DLC loaded, patch errors will occur.[/i]
 [hr]
 
 [h2]Patch (Vanilla)[/h2]
 [list]
-[*][b]Rescued pawns do not join[/b] — You're rescued but the colony doesn't need you
-[*][b]Improve psychoid fertility sensitivity[/b] — Increases the impact of soil fertility on psychoid growth speed
-[*][b]Remove indoor and outdoor need[/b] — Removes the need bars for indoor/outdoor
+[*][b]Rescued pawns do not join[/b] — Prevent rescued pawns from auto-joining; you're rescued but the colony doesn't need you
+[*][b]Improve psychoid fertility sensitivity[/b] — Increase psychoid plants' fertility sensitivity to 90%
+[*][b]Remove indoor and outdoor need[/b] — Remove the indoor/outdoor need bars
 [*][b]No sleep disturbed[/b] — Prevent the mood debuff from disturbed sleep
 [*][b]No skill decay[/b] — Prevent skills from decaying over time
 [*][b]No surgery fail[/b] — Surgeries always succeed
 [*][b]No turret ammo consume[/b] — Player turrets do not consume ammo
 [*][b]No floor wealth[/b] — All floors contribute 0 to colony wealth
-[*][b]Hide crypto sleep pawn[/b] — Prevent cryptosleep pawns from being shown at the top bar
+[*][b]Hide cryptosleep pawn[/b] — Do not show cryptosleep pawns on the top bar
 [*][b]No nutrient paste deterioration[/b] — Prevent nutrient paste from deteriorating over time
 [*][b]No plant resting / No sun lamp resting[/b] — Prevent plants from night resting and disable sun lamp scheduling
 [*][b]Non-player door hold open[/b] — Non-player factions' doors have Hold Open enabled by default
-[*][b]No immediate rot on pawn death by some hediff[/b] — Prevent corpses from instantly rotting when killed by specific hediffs (ToxicBuildup, Scaria)
+[*][b]No immediate rot on pawn death by some hediff[/b] — Prevent corpses from instantly rotting when killed by specific hediffs (Toxic Buildup, Scaria)
 [/list]
 
 [h2]Patch (Ideology)[/h2]
 [list]
-[*][b]Fast ideology relic quest[/b] — Shorten the interval between clue quests by 6x
+[*][b]Fast ideology relic quest[/b] — Shorten the interval between relic clue quests by 6x
 [/list]
 
 [h2]Patch (Biotech)[/h2]
 [list]
 [*][b]Mechanoids that can smith also do art[/b] — Allow smith-capable mechs to perform Art jobs
-[*][b]Faster mechanoid forming[/b] — Speed up mech gestator work
+[*][b]Faster mechanoid forming[/b] — Make mech gestator work much faster
 [*][b]Hauling mechanoids carry more[/b] — Raise hauling mechs' carry capacity to 800
 [*][b]Mechanoid work settings[/b] — Apply to all mechs able to do certain jobs
 [list]
-[*]Sliders: Work speed and Skill level, customizable
+[*]Sliders: [i]Work speed[/i] and [i]Skill level[/i], customizable
 [/list]
 [*][b]Vat learning powerful[/b] — Your kid can still be a genius after a childhood in a growth vat
 [*][b]No spawn custom xenotype[/b] — Stop the game from spawning factionless pawns using your custom xenotypes
@@ -42,13 +45,14 @@
 
 [h2]Patch (Anomaly)[/h2]
 [list]
-[*][b]Fast cooldown anomaly[/b] — Horax, aren't you tired of waiting?
+[*][b]Fast cooldown anomaly[/b] — Reduce Void Provocation cooldown to 2 hours
 [/list]
 
 [h2]Patch (Odyssey)[/h2]
 [list]
 [*][b]Gravship go north if not determined[/b] — If direction can't be inferred from thrusters, force northward movement (helps with symmetrical designs and non-vanilla controls)
 [*][b]Small grav anchor (3x3)[/b] — Shrink the grav anchor footprint
+[*][b]Grav engine no path cost[/b] - Remove path cost for grav engine
 [/list]
 
 [h2]Patch (Facial Animation)[/h2]
@@ -69,10 +73,10 @@
 
 [h2]Patch (Misc)[/h2]
 [list]
-[*][b]Mech that haul or doctor can also capture[/b] — Allow hauling/doctor mechs to capture enemies (Capture Them)
+[*][b]Mechs that haul or doctor can also capture[/b] — Allow hauling/doctor mechs to capture enemies (Capture Them)
 [*][b]Mechanoids that can haul also do urgent hauling[/b] — Allow hauling mechs to perform urgent hauling
 [*][b]Mechanoids all use Auto Blink[/b] — Allow mechs to blink via Auto Blink; player faction only; extremely OP
-[*][b]BM mechanoids enhancement[/b] — Why can't the maid mechs be stronger?
+[*][b]ExGT Bio Mechanoid enhancement[/b] — Add work types for ExGT Bio Mechanoids, with More Mechanitor Mechs 2.0, more work types also available
 [/list]
 
 [h2]Addons[/h2]

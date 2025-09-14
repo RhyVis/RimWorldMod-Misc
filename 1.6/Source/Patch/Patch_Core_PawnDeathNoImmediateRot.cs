@@ -27,27 +27,28 @@ public class Patch_Core_PawnDeathNoImmediateRot
     {
         var matcher = new CodeMatcher(instructions);
 
+        var fPawnHealth = AccessTools.Field(typeof(Pawn), nameof(Pawn.health));
+        var fHediffSet = AccessTools.Field(
+            typeof(Pawn_HealthTracker),
+            nameof(Pawn_HealthTracker.hediffSet)
+        );
+        var mGetFirstHediffOfDef = AccessTools.Method(
+            typeof(HediffSet),
+            nameof(HediffSet.GetFirstHediffOfDef),
+            [typeof(HediffDef), typeof(bool)]
+        );
+
         // First pattern - ToxicBuildup
         matcher.MatchStartForward(
             new(OpCodes.Ldarg_0),
-            new(OpCodes.Ldfld, AccessTools.Field(typeof(Pawn), nameof(Pawn.health))),
-            new(
-                OpCodes.Ldfld,
-                AccessTools.Field(typeof(Pawn_HealthTracker), nameof(Pawn_HealthTracker.hediffSet))
-            ),
+            new(OpCodes.Ldfld, fPawnHealth),
+            new(OpCodes.Ldfld, fHediffSet),
             new(
                 OpCodes.Ldsfld,
                 AccessTools.Field(typeof(HediffDefOf), nameof(HediffDefOf.ToxicBuildup))
             ),
             new(OpCodes.Ldc_I4_0),
-            new(
-                OpCodes.Callvirt,
-                AccessTools.Method(
-                    typeof(HediffSet),
-                    nameof(HediffSet.GetFirstHediffOfDef),
-                    [typeof(HediffDef), typeof(bool)]
-                )
-            ),
+            new(OpCodes.Callvirt, mGetFirstHediffOfDef),
             new(OpCodes.Stloc_S)
         );
 
@@ -71,21 +72,11 @@ public class Patch_Core_PawnDeathNoImmediateRot
         // Second pattern - Scaria
         matcher.MatchStartForward(
             new(OpCodes.Ldarg_0),
-            new(OpCodes.Ldfld, AccessTools.Field(typeof(Pawn), nameof(Pawn.health))),
-            new(
-                OpCodes.Ldfld,
-                AccessTools.Field(typeof(Pawn_HealthTracker), nameof(Pawn_HealthTracker.hediffSet))
-            ),
+            new(OpCodes.Ldfld, fPawnHealth),
+            new(OpCodes.Ldfld, fHediffSet),
             new(OpCodes.Ldsfld, AccessTools.Field(typeof(HediffDefOf), nameof(HediffDefOf.Scaria))),
             new(OpCodes.Ldc_I4_0),
-            new(
-                OpCodes.Callvirt,
-                AccessTools.Method(
-                    typeof(HediffSet),
-                    nameof(HediffSet.GetFirstHediffOfDef),
-                    [typeof(HediffDef), typeof(bool)]
-                )
-            ),
+            new(OpCodes.Callvirt, mGetFirstHediffOfDef),
             new(OpCodes.Stloc_S)
         );
 
