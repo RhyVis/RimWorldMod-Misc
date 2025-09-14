@@ -1,0 +1,81 @@
+[h1]Rhynia Misc — Patch List[/h1]
+
+[i]For minimal patching, any changed settings require a game restart to take effect.[/i]
+[i]All options are disabled by default; enable what you need.[/i]
+[hr]
+
+[h2]Patch (Vanilla)[/h2]
+[list]
+[*][b]Rescued pawns do not join[/b] — You're rescued but the colony doesn't need you
+[*][b]Improve psychoid fertility sensitivity[/b] — Increases the impact of soil fertility on psychoid growth speed
+[*][b]Remove indoor and outdoor need[/b] — Removes the need bars for indoor/outdoor
+[*][b]No sleep disturbed[/b] — Prevent the mood debuff from disturbed sleep
+[*][b]No skill decay[/b] — Prevent skills from decaying over time
+[*][b]No surgery fail[/b] — Surgeries always succeed
+[*][b]No turret ammo consume[/b] — Player turrets do not consume ammo
+[*][b]No floor wealth[/b] — All floors contribute 0 to colony wealth
+[*][b]Hide crypto sleep pawn[/b] — Prevent cryptosleep pawns from being shown at the top bar
+[*][b]No nutrient paste deterioration[/b] — Prevent nutrient paste from deteriorating over time
+[*][b]No plant resting / No sun lamp resting[/b] — Prevent plants from night resting and disable sun lamp scheduling
+[*][b]Non-player door hold open[/b] — Non-player factions' doors have Hold Open enabled by default
+[*][b]No immediate rot on pawn death by some hediff[/b] — Prevent corpses from instantly rotting when killed by specific hediffs (ToxicBuildup, Scaria)
+[/list]
+
+[h2]Patch (Ideology)[/h2]
+[list]
+[*][b]Fast ideology relic quest[/b] — Shorten the interval between clue quests by 6x
+[/list]
+
+[h2]Patch (Biotech)[/h2]
+[list]
+[*][b]Mechanoids that can smith also do art[/b] — Allow smith-capable mechs to perform Art jobs
+[*][b]Faster mechanoid forming[/b] — Speed up mech gestator work
+[*][b]Hauling mechanoids carry more[/b] — Raise hauling mechs' carry capacity to 800
+[*][b]Mechanoid work settings[/b] — Apply to all mechs able to do certain jobs
+[list]
+[*]Sliders: Work speed and Skill level, customizable
+[/list]
+[*][b]Vat learning powerful[/b] — Your kid can still be a genius after a childhood in a growth vat
+[*][b]No spawn custom xenotype[/b] — Stop the game from spawning factionless pawns using your custom xenotypes
+[*][b]Wastepack fast process[/b] — 5x faster wastepack atomizer; also speeds Vanilla Recycle Expanded facilities if installed
+[/list]
+
+[h2]Patch (Anomaly)[/h2]
+[list]
+[*][b]Fast cooldown anomaly[/b] — Horax, aren't you tired of waiting?
+[/list]
+
+[h2]Patch (Odyssey)[/h2]
+[list]
+[*][b]Gravship go north if not determined[/b] — If direction can't be inferred from thrusters, force northward movement (helps with symmetrical designs and non-vanilla controls)
+[*][b]Small grav anchor (3x3)[/b] — Shrink the grav anchor footprint
+[/list]
+
+[h2]Patch (Facial Animation)[/h2]
+[list]
+[*][b]Extend pawn update[/b] — If "Enable Facial Animation for All Pawns" is ON and "Enable Facial Animation for Non-Colonists" is OFF, still update prisoners' and slaves' faces (slightly cheaper than fully enabling)
+[/list]
+
+[h2]Patch (Vanilla Expanded)[/h2]
+[list]
+[*][b]Powerful ecosystem[/b] — Boost VFEF Artificial Ecosystem growth speed to 800%
+[*][b]Self-function AC controller[/b] — VTE AC controller no longer requires a compressor
+[/list]
+
+[h2]Patch (CeleTech Arsenal MKIII)[/h2]
+[list]
+[*][b]Smaller radar[/b] — Reduce radar size to 3x3
+[/list]
+
+[h2]Patch (Misc)[/h2]
+[list]
+[*][b]Mech that haul or doctor can also capture[/b] — Allow hauling/doctor mechs to capture enemies (Capture Them)
+[*][b]Mechanoids that can haul also do urgent hauling[/b] — Allow hauling mechs to perform urgent hauling
+[*][b]Mechanoids all use Auto Blink[/b] — Allow mechs to blink via Auto Blink; player faction only; extremely OP
+[*][b]BM mechanoids enhancement[/b] — Why can't the maid mechs be stronger?
+[/list]
+
+[h2]Addons[/h2]
+[list]
+[*][b]Screaming incident[/b] — Scream when incidents come
+[/list]

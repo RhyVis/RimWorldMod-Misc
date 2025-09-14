@@ -150,6 +150,15 @@
             <defaultValue>False</defaultValue>
           </li>
 
+          <li Class="XmlExtensions.Setting.Checkbox">
+            <key>Core_PawnDeathNoImmediateRot</key>
+            <label>No immediate rot on pawn death by some hediff</label>
+            <tooltip>Prevents pawns from immediately rotting by specific hediff (ToxicBuildup, Scaria) upon death</tooltip>
+            <tKey>RhyniaMisc_Settings_Core_PawnDeathNoImmediateRot</tKey>
+            <tKeyTip>RhyniaMisc_Settings_Core_PawnDeathNoImmediateRot_Tip</tKeyTip>
+            <defaultValue>False</defaultValue>
+          </li>
+
           <li Class="XmlExtensions.Setting.Gap" />
 
           <li Class="XmlExtensions.Setting.Checkbox">
@@ -178,6 +187,15 @@
             <tooltip>Allow mech gestator working much faster</tooltip>
             <tKey>RhyniaMisc_Settings_Biotech_FasterMechForming</tKey>
             <tKeyTip>RhyniaMisc_Settings_Biotech_FasterMechForming_Tip</tKeyTip>
+            <defaultValue>False</defaultValue>
+          </li>
+
+          <li Class="XmlExtensions.Setting.Checkbox">
+            <key>Biotech_HaulingMechCarryMore</key>
+            <label>Hauling mechanoids carry more</label>
+            <tooltip>Increase the carrying capacity of hauling mechanoids to 800</tooltip>
+            <tKey>RhyniaMisc_Settings_Biotech_HaulingMechCarryMore</tKey>
+            <tKeyTip>RhyniaMisc_Settings_Biotech_HaulingMechCarryMore_Tip</tKeyTip>
             <defaultValue>False</defaultValue>
           </li>
 
@@ -425,14 +443,6 @@
             <defaultValue>False</defaultValue>
           </li>
 
-          <li Class="XmlExtensions.Setting.Checkbox">
-            <key>Misc_GroupingTweak</key>
-            <label>Dropdown grouping tweaks</label>
-            <tooltip>Integrate some buildings into dropdown, requires 'Clean Categories: Dropdowns' + 'Clean Categories: Dropdowns *Extended*'</tooltip>
-            <tKey>RhyniaMisc_Settings_Misc_GroupingTweak</tKey>
-            <tKeyTip>RhyniaMisc_Settings_Misc_GroupingTweak_Tip</tKeyTip>
-            <defaultValue>False</defaultValue>
-          </li>
         </settings>
       </li>
 

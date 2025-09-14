@@ -23,6 +23,13 @@
         </li>
         <li Class="XmlExtensions.Boolean.Comparison">
           <modId>Rhynia.Mod.Misc</modId>
+          <value1>Biotech_HaulingMechCarryMore</value1>
+          <value2>True</value2>
+          <isKey1>True</isKey1>
+          <nonNumeric>True</nonNumeric>
+        </li>
+        <li Class="XmlExtensions.Boolean.Comparison">
+          <modId>Rhynia.Mod.Misc</modId>
           <value1>Misc_MechHaulAlsoCapture</value1>
           <value2>True</value2>
           <isKey1>True</isKey1>
@@ -146,6 +153,22 @@
                 </caseTrue>
               </Operation>
             </caseFalse>
+          </Operation>
+        </caseTrue>
+      </Operation>
+
+      <!-- Apply Biotech_HaulingMechCarryMore -->
+      <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>Rhynia.Mod.Misc</modId>
+        <key>Biotech_HaulingMechCarryMore</key>
+        <defaultValue>False</defaultValue>
+        <caseTrue>
+          <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+            <xmlDoc>MechWorkList</xmlDoc>
+            <xpath>/MechWorkList/ThingDef[race/mechEnabledWorkTypes[li = 'Hauling']]/statBases</xpath>
+            <value>
+              <CarryingCapacity>800</CarryingCapacity>
+            </value>
           </Operation>
         </caseTrue>
       </Operation>

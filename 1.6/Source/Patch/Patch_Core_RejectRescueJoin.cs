@@ -55,30 +55,18 @@ internal static class Patch_Core_RejectRescueJoin
         IEnumerable<CodeInstruction> instructions
     )
     {
-        var methodValueSeed = AccessTools.Method(typeof(Rand), nameof(Rand.ValueSeeded));
-        if (methodValueSeed is null)
-        {
-            Error("Failed to find method Rand.ValueSeeded for patch Core_RejectRescueJoin.");
-            throw new("Method Rand.ValueSeeded not found for patch Core_RejectRescueJoin.");
-        }
+        var matcher = new CodeMatcher(instructions);
 
-        bool patched = false;
-
-        foreach (var instruction in instructions)
-        {
-            if (
-                !patched
-                && instruction.opcode == OpCodes.Call
-                && instruction.operand is MethodBase method
-                && method == methodValueSeed
+        matcher
+            .MatchEndForward(
+                new CodeMatch(
+                    OpCodes.Call,
+                    AccessTools.Method(typeof(Rand), nameof(Rand.ValueSeeded))
+                )
             )
-            {
-                yield return new CodeInstruction(OpCodes.Pop);
-                yield return new CodeInstruction(OpCodes.Ldc_R4, 1.0f);
-                patched = true;
-            }
-            else
-                yield return instruction;
-        }
+            .ThrowIfInvalid("Failed to match instructions for patch Core_RejectRescueJoin.")
+            .InsertAfter(new(OpCodes.Pop), new(OpCodes.Ldc_R4, 1.0f));
+
+        return matcher.InstructionEnumeration();
     }
 }

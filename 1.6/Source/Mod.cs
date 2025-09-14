@@ -44,6 +44,10 @@ public class Mod_Misc(ModContentPack mod) : Mod(mod)
             settingKey: "Core_NonPlayerDoorHoldOpen",
             harmonyPatchingAction: Patch_Core_NonPlayerDoorHoldOpen.Apply
         );
+        OptionalPatch(
+            settingKey: "Core_PawnDeathNoImmediateRot",
+            harmonyPatchingAction: Patch_Core_PawnDeathNoImmediateRot.Apply
+        );
 
         OptionalPatch(
             settingKey: "Patch_Ideology_FastRelic",

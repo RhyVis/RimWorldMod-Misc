@@ -37,28 +37,29 @@ internal static class Patch_CTA_SmallerFacility
 
     static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
     {
-        var type = AccessTools.TypeByName("TOT_DLL_test.Building_AESARadar");
-        var fieldOriginal = AccessTools.Field(type, "vec");
-        var fieldReplace = AccessTools.Field(
-            typeof(Patch_CTA_SmallerFacility_Helper),
-            nameof(Patch_CTA_SmallerFacility_Helper.Vec)
-        );
+        var matcher = new CodeMatcher(instructions);
 
-        bool patched = false;
-
-        foreach (var instruction in instructions)
-            if (
-                !patched
-                && instruction.opcode == OpCodes.Ldsfld
-                && instruction.operand is FieldInfo field
-                && field.Equals(fieldOriginal)
+        matcher
+            .MatchStartForward(
+                new CodeMatch(
+                    OpCodes.Ldsfld,
+                    AccessTools.Field(
+                        AccessTools.TypeByName("TOT_DLL_test.Building_AESARadar"),
+                        "vec"
+                    )
+                )
             )
-            {
-                yield return new CodeInstruction(OpCodes.Ldsfld, fieldReplace);
-                patched = true;
-            }
-            else
-                yield return instruction;
+            .ThrowIfInvalid(
+                "Could not find target instruction to patch in TOT_DLL_test.Building_AESARadar.DrawAt"
+            )
+            .SetOperandAndAdvance(
+                AccessTools.Field(
+                    typeof(Patch_CTA_SmallerFacility_Helper),
+                    nameof(Patch_CTA_SmallerFacility_Helper.Vec)
+                )
+            );
+
+        return matcher.InstructionEnumeration();
     }
 }
 

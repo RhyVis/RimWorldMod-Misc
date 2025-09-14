@@ -6,7 +6,7 @@
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>
-  <modVersion IgnoreIfNoMatchingField="True">1.3.0</modVersion>
+  <modVersion IgnoreIfNoMatchingField="True">1.5.0</modVersion>
   <modDependencies>
     <li>
       <packageId>Rhynia.Mod.Baseline</packageId>
@@ -30,14 +30,6 @@
     <li>brrainz.harmony</li>
     <li>imranfish.xmlextensions</li>
     <li>Rhynia.Mod.Baseline</li>
-    <li>tot.celetech.mkiii</li>
-    <li>misstalls.vrshuttle</li>
-    <li>vanillaexpanded.vfefarming</li>
-    <li>vanillaexpanded.temperature</li>
-    <li>xmb.breadmech</li>
-    <li>mlie.tinyworkbenchs</li>
-    <li>ferny.categoriesdropdowns</li>
-    <li>koberiddle.categoriesdropdownsextended</li>
   </loadAfter>
   <description>Some patches made for QOL. Everything configurable and load as late as possible.</description>
 </ModMetaData>

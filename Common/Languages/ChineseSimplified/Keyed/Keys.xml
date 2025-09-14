@@ -41,6 +41,9 @@
   <RhyniaMisc_Settings_Core_NonPlayerDoorHoldOpen>非玩家派系门默认保持开启</RhyniaMisc_Settings_Core_NonPlayerDoorHoldOpen>
   <RhyniaMisc_Settings_Core_NonPlayerDoorHoldOpen_Tip>非玩家派系的门的“保持开启”选项默认启用</RhyniaMisc_Settings_Core_NonPlayerDoorHoldOpen_Tip>
 
+  <RhyniaMisc_Settings_Core_PawnDeathNoImmediateRot>防止特定健康状态导致的死亡立即腐烂</RhyniaMisc_Settings_Core_PawnDeathNoImmediateRot>
+  <RhyniaMisc_Settings_Core_PawnDeathNoImmediateRot_Tip>防止生物因特定健康状态（中毒、狂躁症）死亡后立即腐烂</RhyniaMisc_Settings_Core_PawnDeathNoImmediateRot_Tip>
+
   <RhyniaMisc_Settings_Ideology_FastRelic>快速圣物任务</RhyniaMisc_Settings_Ideology_FastRelic>
   <RhyniaMisc_Settings_Ideology_FastRelic_Tip>将圣物线索任务发布的时间间隔缩短6倍</RhyniaMisc_Settings_Ideology_FastRelic_Tip>
 
@@ -49,6 +52,9 @@
 
   <RhyniaMisc_Settings_Biotech_FasterMechForming>快速机械体培育</RhyniaMisc_Settings_Biotech_FasterMechForming>
   <RhyniaMisc_Settings_Biotech_FasterMechForming_Tip>机械体培育得更快</RhyniaMisc_Settings_Biotech_FasterMechForming_Tip>
+
+  <RhyniaMisc_Settings_Biotech_HaulingMechCarryMore>搬运机械族携带更多</RhyniaMisc_Settings_Biotech_HaulingMechCarryMore>
+  <RhyniaMisc_Settings_Biotech_HaulingMechCarryMore_Tip>增加从事搬运工作的机械族的携带能力到800</RhyniaMisc_Settings_Biotech_HaulingMechCarryMore_Tip>
 
   <RhyniaMisc_Settings_Biotech_TweakMechWork>机械工作设置</RhyniaMisc_Settings_Biotech_TweakMechWork>
   <RhyniaMisc_Settings_Biotech_TweakMechWork_Tip>这些设置将应用于所有能够执行某些工作的机械</RhyniaMisc_Settings_Biotech_TweakMechWork_Tip>

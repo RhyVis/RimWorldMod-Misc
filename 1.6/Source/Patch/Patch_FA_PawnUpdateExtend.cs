@@ -35,22 +35,34 @@ internal static class Patch_FA_PawnUpdateExtend
 
     static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
     {
-        var originalGetter = AccessTools.PropertyGetter(typeof(Pawn), nameof(Pawn.IsColonist));
-        var replaceMethod = AccessTools.Method(
-            typeof(Patch_FA_PawnUpdateExtend_Helper),
-            nameof(Patch_FA_PawnUpdateExtend_Helper.Is)
-        );
+        var matcher = new CodeMatcher(instructions);
 
-        foreach (var code in instructions)
-            if (code.opcode == OpCodes.Callvirt && code.operand as MethodInfo == originalGetter)
-                yield return new CodeInstruction(OpCodes.Call, replaceMethod);
-            else
-                yield return code;
+        matcher
+            .MatchStartForward(
+                new CodeMatch(
+                    OpCodes.Callvirt,
+                    AccessTools.PropertyGetter(typeof(Pawn), nameof(Pawn.IsColonist))
+                )
+            )
+            .ThrowIfInvalid(
+                "Could not find target instruction to patch in FacialAnimation.FacialAnimationControllerComp.CheckUpdatable"
+            )
+            .SetInstruction(
+                new CodeInstruction(
+                    OpCodes.Call,
+                    AccessTools.Method(
+                        typeof(Patch_FA_PawnUpdateExtend_Helper),
+                        nameof(Patch_FA_PawnUpdateExtend_Helper.IsValid)
+                    )
+                )
+            );
+
+        return matcher.InstructionEnumeration();
     }
 }
 
 public static class Patch_FA_PawnUpdateExtend_Helper
 {
-    public static bool Is(Pawn pawn) =>
+    public static bool IsValid(Pawn pawn) =>
         pawn.IsColonist || pawn.IsPrisonerOfColony || pawn.IsSlaveOfColony;
 }

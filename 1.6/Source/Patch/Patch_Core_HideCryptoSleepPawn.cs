@@ -27,49 +27,29 @@ internal static class Patch_Core_HideCryptoSleepPawn
 
     static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
     {
-        var codes = new List<CodeInstruction>(instructions);
+        var matcher = new CodeMatcher(instructions);
 
-        var targetGetter = AccessTools.PropertyGetter(
-            typeof(MapPawns),
-            nameof(MapPawns.FreeColonists)
-        );
-        if (targetGetter is null)
-        {
-            Error(
-                "Failed to apply patch Core_HideCryptoSleepPawn: Could not find property MapPawns.FreeColonists"
-            );
-            return codes;
-        }
-
-        var processorMethod = AccessTools.Method(
-            typeof(Patch_Core_HideCryptoSleepPawn_Helper),
-            nameof(Patch_Core_HideCryptoSleepPawn_Helper.ProcessFreeColonists)
-        );
-        if (processorMethod is null)
-        {
-            Error(
-                "Failed to apply patch Core_HideCryptoSleepPawn: Could not find method Patch_Core_HideCryptoSleepPawn_Helper.ProcessFreeColonists"
-            );
-            return codes;
-        }
-
-        bool patched = false;
-        for (int i = 0; i < codes.Count; i++)
-            if (
-                codes[i].opcode == OpCodes.Callvirt
-                && codes[i].operand is MethodInfo method
-                && method == targetGetter
+        matcher
+            .MatchEndForward(
+                new CodeMatch(
+                    OpCodes.Callvirt,
+                    AccessTools.PropertyGetter(typeof(MapPawns), nameof(MapPawns.FreeColonists))
+                )
             )
-            {
-                codes.Insert(i + 1, new(OpCodes.Call, processorMethod));
-                patched = true;
-                break;
-            }
+            .ThrowIfInvalid(
+                "Could not find target instruction to patch in ColonistBar.CheckRecacheEntries"
+            )
+            .InsertAfter(
+                new CodeInstruction(
+                    OpCodes.Call,
+                    AccessTools.Method(
+                        typeof(Patch_Core_HideCryptoSleepPawn_Helper),
+                        nameof(Patch_Core_HideCryptoSleepPawn_Helper.ProcessFreeColonists)
+                    )
+                )
+            );
 
-        if (!patched)
-            Warn("Could not find target instruction to patch in ColonistBar.CheckRecacheEntries");
-
-        return codes;
+        return matcher.InstructionEnumeration();
     }
 }
 
