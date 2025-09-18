@@ -184,7 +184,7 @@
           <li Class="XmlExtensions.Setting.Checkbox">
             <key>Biotech_FasterMechForming</key>
             <label>Faster mechanoid forming</label>
-            <tooltip>Allow mech gestator working much faster</tooltip>
+            <tooltip>Allow mech gestator working much faster, also reduces cycle amount to 1</tooltip>
             <tKey>RhyniaMisc_Settings_Biotech_FasterMechForming</tKey>
             <tKeyTip>RhyniaMisc_Settings_Biotech_FasterMechForming_Tip</tKeyTip>
             <defaultValue>False</defaultValue>

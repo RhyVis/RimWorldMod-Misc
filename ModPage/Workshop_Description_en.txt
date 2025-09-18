@@ -32,7 +32,7 @@ Self-use patches made during my run. Everything configurable and load as late as
 [h2]Patch (Biotech)[/h2]
 [list]
 [*][b]Mechanoids that can smith also do art[/b] — Allow smith-capable mechs to perform Art jobs
-[*][b]Faster mechanoid forming[/b] — Make mech gestator work much faster
+[*][b]Faster mechanoid forming[/b] — Make mech gestator work much faster, also reduces cycle amount to 1
 [*][b]Hauling mechanoids carry more[/b] — Raise hauling mechs' carry capacity to 800
 [*][b]Mechanoid work settings[/b] — Apply to all mechs able to do certain jobs
 [list]

@@ -344,6 +344,12 @@
           <defaultBaseValue>20</defaultBaseValue>
         </value>
       </Operation>
+      <Operation Class="PatchOperationReplace">
+        <xpath>/Defs/RecipeDef[gestationCycles]/gestationCycles</xpath>
+        <value>
+          <gestationCycles>1</gestationCycles>
+        </value>
+      </Operation>
     </caseTrue>
   </Operation>
 
