@@ -4,6 +4,7 @@ global using System.Linq;
 global using System.Reflection;
 global using System.Reflection.Emit;
 global using HarmonyLib;
+global using Rhynia.Baseline;
 global using Rhynia.Baseline.Util;
 global using static Rhynia.Baseline.Util.Logger<Rhynia.Misc.LogLabel>;
 global using RimWorld;

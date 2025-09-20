@@ -8,7 +8,7 @@
         <VersionPrefix>1.6.0.0</VersionPrefix>
         <DebugType>None</DebugType>
         <DebugSymbols>False</DebugSymbols>
-        <Nullable>Enable</Nullable>
+        <Nullable>Disable</Nullable>
         <AppendTargetFrameworkToOutputPath>False</AppendTargetFrameworkToOutputPath>
         <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
         <GenerateTargetFrameworkAttribute>False</GenerateTargetFrameworkAttribute>

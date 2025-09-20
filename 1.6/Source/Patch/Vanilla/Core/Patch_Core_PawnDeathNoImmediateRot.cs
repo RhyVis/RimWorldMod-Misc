@@ -2,28 +2,9 @@ namespace Rhynia.Misc.Patch;
 
 public class Patch_Core_PawnDeathNoImmediateRot
 {
-    internal static void Apply(Harmony harmony)
-    {
-        try
-        {
-            if (AccessTools.Method(typeof(Pawn), nameof(Pawn.Kill)) is { } method)
-            {
-                harmony.Patch(
-                    method,
-                    transpiler: new(typeof(Patch_Core_PawnDeathNoImmediateRot), nameof(Transpiler))
-                );
-                Info("Applied patch Core_PawnDeathNoImmediateRot");
-            }
-            else
-                Error("Failed to find method Pawn.Kill");
-        }
-        catch (Exception ex)
-        {
-            Error($"Failed to apply patch Core_PawnDeathNoImmediateRot: {ex}");
-        }
-    }
-
-    static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+    internal static IEnumerable<CodeInstruction> Transpiler(
+        IEnumerable<CodeInstruction> instructions
+    )
     {
         var matcher = new CodeMatcher(instructions);
 

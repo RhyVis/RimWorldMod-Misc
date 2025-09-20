@@ -1,7 +1,5 @@
 namespace Rhynia.Misc;
 
-#nullable disable
-
 [DefOf]
 public static class DefOf_Misc
 {
