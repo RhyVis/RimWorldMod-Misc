@@ -1,6 +1,6 @@
 namespace Rhynia.Misc.Patch;
 
-internal class PatchBase_Biotech(Harmony harmony) : PatchBase(harmony)
+internal class PatchBase_Biotech : PatchBase
 {
     public override string Name => "Biotech";
     public override string ModId => "Ludeon.Rimworld.Biotech";

@@ -20,58 +20,46 @@ public class Patch_Core_PawnDeathNoImmediateRot
         );
 
         // First pattern - ToxicBuildup
-        matcher.MatchStartForward(
-            new(OpCodes.Ldarg_0),
-            new(OpCodes.Ldfld, fPawnHealth),
-            new(OpCodes.Ldfld, fHediffSet),
-            new(
-                OpCodes.Ldsfld,
-                AccessTools.Field(typeof(HediffDefOf), nameof(HediffDefOf.ToxicBuildup))
-            ),
-            new(OpCodes.Ldc_I4_0),
-            new(OpCodes.Callvirt, mGetFirstHediffOfDef),
-            new(OpCodes.Stloc_S)
-        );
+        matcher
+            .MatchStartForward(
+                new(OpCodes.Ldarg_0),
+                new(OpCodes.Ldfld, fPawnHealth),
+                new(OpCodes.Ldfld, fHediffSet),
+                new(
+                    OpCodes.Ldsfld,
+                    AccessTools.Field(typeof(HediffDefOf), nameof(HediffDefOf.ToxicBuildup))
+                ),
+                new(OpCodes.Ldc_I4_0),
+                new(OpCodes.Callvirt, mGetFirstHediffOfDef),
+                new(OpCodes.Stloc_S)
+            )
+            .ThrowIfInvalid("Failed to match start of ToxicBuildup pattern");
 
-        if (matcher.IsValid)
-        {
-            var loc = matcher.InstructionAt(6).Clone().operand;
-            matcher.RemoveInstructions(7);
-            matcher.Insert(new(OpCodes.Ldnull), new(OpCodes.Stloc_S, loc));
-        }
-        else
-        {
-            Error("Failed to match ToxicBuildup def in Pawn.Kill");
-            throw new InvalidOperationException(
-                "Transpiler failed: ToxicBuildup pattern not found"
-            );
-        }
+        var loc1 = matcher.InstructionAt(6).Clone().operand;
+        matcher.RemoveInstructions(7);
+        matcher.Insert(new(OpCodes.Ldnull), new(OpCodes.Stloc_S, loc1));
 
-        // Reset matcher to start for second pattern
         matcher.Start();
 
         // Second pattern - Scaria
-        matcher.MatchStartForward(
-            new(OpCodes.Ldarg_0),
-            new(OpCodes.Ldfld, fPawnHealth),
-            new(OpCodes.Ldfld, fHediffSet),
-            new(OpCodes.Ldsfld, AccessTools.Field(typeof(HediffDefOf), nameof(HediffDefOf.Scaria))),
-            new(OpCodes.Ldc_I4_0),
-            new(OpCodes.Callvirt, mGetFirstHediffOfDef),
-            new(OpCodes.Stloc_S)
-        );
+        matcher
+            .MatchStartForward(
+                new(OpCodes.Ldarg_0),
+                new(OpCodes.Ldfld, fPawnHealth),
+                new(OpCodes.Ldfld, fHediffSet),
+                new(
+                    OpCodes.Ldsfld,
+                    AccessTools.Field(typeof(HediffDefOf), nameof(HediffDefOf.Scaria))
+                ),
+                new(OpCodes.Ldc_I4_0),
+                new(OpCodes.Callvirt, mGetFirstHediffOfDef),
+                new(OpCodes.Stloc_S)
+            )
+            .ThrowIfInvalid("Failed to match start of Scaria pattern");
 
-        if (matcher.IsValid)
-        {
-            var loc = matcher.InstructionAt(6).Clone().operand;
-            matcher.RemoveInstructions(7);
-            matcher.Insert(new(OpCodes.Ldnull), new(OpCodes.Stloc_S, loc));
-        }
-        else
-        {
-            Error("Failed to match Scaria def in Pawn.Kill");
-            throw new InvalidOperationException("Transpiler failed: Scaria pattern not found");
-        }
+        var loc2 = matcher.InstructionAt(6).Clone().operand;
+        matcher.RemoveInstructions(7);
+        matcher.Insert(new(OpCodes.Ldnull), new(OpCodes.Stloc_S, loc2));
 
         return matcher.InstructionEnumeration();
     }

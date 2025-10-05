@@ -1,3 +1,4 @@
+using Rhynia.Misc.Patch;
 using XmlExtensions;
 
 namespace Rhynia.Misc;
@@ -7,15 +8,21 @@ public class Mod_Misc(ModContentPack mod) : Mod(mod)
 {
     internal const string MOD_ID = "Rhynia.Mod.Misc";
 
-    static readonly Harmony harmony = new(MOD_ID);
+    private static readonly Harmony harmony = new(MOD_ID);
 
     static Mod_Misc()
     {
         using var _ = TimingScope.Start(
-            (elapsed) => Debug($"Mod_Misc initialized in {elapsed.Milliseconds} ms")
+            (elapsed) => Info($"Initialized in {elapsed.Milliseconds} ms")
         );
 
-        PatchBase.ApplyAll<Mod_Misc>(harmony);
+        harmony.Apply<PatchBase_Core>();
+        harmony.Apply<PatchBase_Ideology>();
+        harmony.Apply<PatchBase_Biotech>();
+        harmony.Apply<PatchBase_Odyssey>();
+        harmony.Apply<PatchBase_CTA>();
+        harmony.Apply<PatchBase_FA>();
+        harmony.Apply<PatchBase_Addon>();
     }
 }
 

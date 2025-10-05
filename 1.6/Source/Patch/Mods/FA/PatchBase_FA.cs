@@ -1,13 +1,10 @@
 namespace Rhynia.Misc.Patch;
 
-internal class PatchBase_FA(Harmony harmony) : PatchBase(harmony)
+internal class PatchBase_FA : PatchBase
 {
     public override string Name => "Facial Animation";
     public override string ModId => "Nals.FacialAnimation";
     public override string LogLabel => "Rhynia.Misc";
-
-    protected override bool ShouldApply =>
-        ModLister.GetActiveModWithIdentifier(ModId, true) is not null;
 
     protected override IEnumerable<PatchProvider> PatchProviders =>
         [

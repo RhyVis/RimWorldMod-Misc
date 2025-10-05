@@ -1,6 +1,6 @@
 namespace Rhynia.Misc.Patch;
 
-internal class PatchBase_CTA(Harmony harmony) : PatchBase(harmony)
+internal class PatchBase_CTA : PatchBase
 {
     public override string Name => "Ideology";
     public override string ModId => "tot.celetech.mkiii";

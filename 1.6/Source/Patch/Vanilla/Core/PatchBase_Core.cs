@@ -2,7 +2,7 @@ using Verse.AI;
 
 namespace Rhynia.Misc.Patch;
 
-internal class PatchBase_Core(Harmony harmony) : PatchBase(harmony)
+internal class PatchBase_Core : PatchBase
 {
     public override string Name => "Core";
     public override string ModId => "Ludeon.Rimworld";

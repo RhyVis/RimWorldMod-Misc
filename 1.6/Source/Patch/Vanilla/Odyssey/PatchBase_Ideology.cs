@@ -2,7 +2,7 @@ using RimWorld.Planet;
 
 namespace Rhynia.Misc.Patch;
 
-internal class PatchBase_Odyssey(Harmony harmony) : PatchBase(harmony)
+internal class PatchBase_Odyssey : PatchBase
 {
     public override string Name => "Odyssey";
     public override string ModId => "Ludeon.Rimworld.Odyssey";

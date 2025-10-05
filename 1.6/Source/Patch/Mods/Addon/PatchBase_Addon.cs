@@ -1,6 +1,6 @@
 namespace Rhynia.Misc.Patch;
 
-internal class PatchBase_Addon(Harmony harmony) : PatchBase(harmony)
+internal class PatchBase_Addon : PatchBase
 {
     public override string Name => "Rhynia Misc Tweaks Addon";
     public override string ModId => "Rhynia.Mod.Misc";
